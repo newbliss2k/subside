@@ -1,0 +1,1 @@
+if getkey("pause") game_end()
