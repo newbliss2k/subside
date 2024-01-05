@@ -5,6 +5,7 @@ function scr_getkey_setup(){
 	#macro pressed 1
 	#macro released 2
 	#macro direct 3
+	#macro clear 4
 	
 	#macro mouse_left -4
 	#macro mouse_right -3
@@ -23,31 +24,31 @@ function scr_getkey_setup(){
 		
 		// primary keys definition
 		
-		global.key1.w=ini_read_real("key1","w",ord("W")) // Jump
-		global.key1.a=ini_read_real("key1","a",ord("A")) // Left
-		global.key1.s=ini_read_real("key1","s",ord("S")) // Down
-		global.key1.d=ini_read_real("key1","d",ord("D")) // Right
+		global.key1.up=ini_read_real("key1","up",vk_up)
+		global.key1.left=ini_read_real("key1","left",vk_left)
+		global.key1.down=ini_read_real("key1","down",vk_down)
+		global.key1.right=ini_read_real("key1","right",vk_right)
 		
-		global.key1.use=ini_read_real("key1","use",mouse_right) // Throw
-		global.key1.atk=ini_read_real("key1","atk",mouse_left) // Attack
+		global.key1.ok=ini_read_real("key1","ok",ord("A"))
+		global.key1.back=ini_read_real("key1","back",ord("S"))
+		global.key1.menu=ini_read_real("key1","menu",ord("D"))
 		
-		global.key1.restart=ini_read_real("key1","res",ord("R")) // Restart
-		global.key1.look=ini_read_real("key1","look",vk_shift) // Look Around
-		global.key1.pause=ini_read_real("key1","pause",vk_escape) // Back
+		global.key1.res=ini_read_real("key1","res",ord("R"))
+		global.key1.esc=ini_read_real("key1","esc",vk_escape)
 		
 		// secondary keys definition
 		
-		global.key2.w=ini_read_real("key2","w",ord("W")) // Jump
-		global.key2.a=ini_read_real("key2","a",ord("A")) // Left
-		global.key2.s=ini_read_real("key2","s",ord("S")) // Down
-		global.key2.d=ini_read_real("key2","d",ord("D")) // Right
+		global.key2.up=ini_read_real("key2","up",unset)
+		global.key2.left=ini_read_real("key2","left",unset)
+		global.key2.down=ini_read_real("key2","down",unset)
+		global.key2.right=ini_read_real("key2","right",unset)
 		
-		global.key2.use=ini_read_real("key2","use",vk_space) // Throw
-		global.key2.atk=ini_read_real("key2","atk",unset) // Attack
+		global.key2.ok=ini_read_real("key2","ok",vk_enter)
+		global.key2.back=ini_read_real("key2","back",vk_shift)
+		global.key2.menu=ini_read_real("key2","menu",vk_control)
 		
-		global.key2.restart=ini_read_real("key2","res",unset) // Restart
-		global.key2.look=ini_read_real("key2","look",vk_control) // Look Around
-		global.key2.pause=ini_read_real("key2","pause",vk_enter) // Back
+		global.key2.res=ini_read_real("key2","res",unset)
+		global.key2.esc=ini_read_real("key2","esc",unset)
 		
 	ini_close()
 	
@@ -97,6 +98,10 @@ function getkey(_key,_type=0){
 		case released: if ((scr_getkey_add_released(_key1)) || (scr_getkey_add_released(_key2))) return 1 else return 0
 			
 		case direct: if ((scr_getkey_add_direct(_key1)) || (scr_getkey_add_direct(_key2))) return 1 else return 0
+		
+		case clear:
+			if _key1>0 keyboard_clear(_key1)
+			if _key2>0 keyboard_clear(_key2)
 		
 		}
 

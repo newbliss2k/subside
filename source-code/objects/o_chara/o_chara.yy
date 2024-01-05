@@ -30,8 +30,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "s_chara_mask",
-    "path": "sprites/s_chara_mask/s_chara_mask.yy",
+    "name": "s_kris_down",
+    "path": "sprites/s_kris_down/s_kris_down.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -1,0 +1,1 @@
+if mouse_check_button(mb_left) and place_meeting(x,y,o_touch) press=1 else press=0

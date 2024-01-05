@@ -1,2 +1,0 @@
-defx=x
-defy=y

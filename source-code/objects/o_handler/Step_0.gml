@@ -1,1 +1,1 @@
-if getkey("pause") game_end()
+if getkey("esc") game_end()
