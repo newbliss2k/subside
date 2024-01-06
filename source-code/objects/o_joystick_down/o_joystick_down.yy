@@ -2,17 +2,17 @@
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
   "name": "o_joystick_down",
-  "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
-  ],
+  "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Chara",
-    "path": "folders/Objects/Chara.yy",
+    "name": "Multitouch",
+    "path": "folders/Objects/Multitouch.yy",
   },
-  "parentObjectId": null,
+  "parentObjectId": {
+    "name": "o_ui_parent",
+    "path": "objects/o_ui_parent/o_ui_parent.yy",
+  },
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -33,5 +33,5 @@
     "path": "sprites/s_joystick_down/s_joystick_down.yy",
   },
   "spriteMaskId": null,
-  "visible": false,
+  "visible": true,
 }

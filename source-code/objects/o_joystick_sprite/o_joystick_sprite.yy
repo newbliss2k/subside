@@ -1,15 +1,13 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "o_touch",
-  "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
-  ],
+  "name": "o_joystick_sprite",
+  "eventList": [],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
-    "name": "Chara",
-    "path": "folders/Objects/Chara.yy",
+    "name": "Multitouch",
+    "path": "folders/Objects/Multitouch.yy",
   },
   "parentObjectId": null,
   "persistent": false,
@@ -28,8 +26,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "s_chara_mouse",
-    "path": "sprites/s_chara_mouse/s_chara_mouse.yy",
+    "name": "s_joystick",
+    "path": "sprites/s_joystick/s_joystick.yy",
   },
   "spriteMaskId": null,
   "visible": true,

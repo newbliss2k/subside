@@ -18,7 +18,5 @@ image_index_unlock=0
 image_index=1
 moving=0
 
-instance_create_depth(mouse_x,mouse_y,-1000,o_touch)
-
 // sword attack (k0-like)
 

@@ -1,9 +1,9 @@
 function scr_check_priorities(){
 	
-	gk_r=(getkey("right") or joystick("right"))
-	gk_l=(getkey("left") or joystick("left"))
-	gk_d=(getkey("down") or joystick("down"))
-	gk_u=(getkey("up") or joystick("up"))
+	gk_r=(getkey("right") or joystick(o_joystick_right))
+	gk_l=(getkey("left") or joystick(o_joystick_left))
+	gk_d=(getkey("down") or joystick(o_joystick_down))
+	gk_u=(getkey("up") or joystick(o_joystick_up))
 	
 	if gk_r and !gk_l {
 		x_priority=1
