@@ -1,3 +1,5 @@
+show_debug_message(os_android)
+
 if room=r_init {
 	
 	scr_getkey_setup()
@@ -9,6 +11,10 @@ if room=r_init {
 
 if room=r_gameplay_test {
 	
-	instance_create_depth(20,140,-15999,o_multitouch)
+	//instance_create_depth(20,140,-15999,o_multitouch)
 	
 }
+
+global.osflavor=os_type
+global.aspectratio=display_get_width()/display_get_height()
+instance_create_depth(20,140,-15999,o_control)

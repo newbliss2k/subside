@@ -1,5 +1,0 @@
-instance_create_depth(x,y,-15999,o_joystick_right)
-instance_create_depth(x,y,-15999,o_joystick_left)
-instance_create_depth(x,y,-15999,o_joystick_up)
-instance_create_depth(x,y,-15999,o_joystick_down)
-instance_create_depth(x,y,-15999,o_joystick_sprite)

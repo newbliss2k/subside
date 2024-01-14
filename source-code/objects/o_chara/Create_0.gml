@@ -3,12 +3,14 @@
 x_speed=2
 x_control=0
 x_priority=0
+x_moving=0
 
 // y movement
 
 y_speed=2
 y_control=0
 y_priority=0
+y_moving=0
 
 anim_x=0
 anim_y=0

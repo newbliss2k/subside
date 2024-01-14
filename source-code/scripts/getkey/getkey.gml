@@ -29,9 +29,9 @@ function scr_getkey_setup(){
 		global.key1.down=ini_read_real("key1","down",vk_down)
 		global.key1.right=ini_read_real("key1","right",vk_right)
 		
-		global.key1.ok=ini_read_real("key1","ok",ord("A"))
-		global.key1.back=ini_read_real("key1","back",ord("S"))
-		global.key1.menu=ini_read_real("key1","menu",ord("D"))
+		global.key1.z=ini_read_real("key1","ok",ord("Z"))
+		global.key1.x=ini_read_real("key1","back",ord("X"))
+		global.key1.c=ini_read_real("key1","menu",ord("C"))
 		
 		global.key1.res=ini_read_real("key1","res",ord("R"))
 		global.key1.esc=ini_read_real("key1","esc",vk_escape)
@@ -43,9 +43,9 @@ function scr_getkey_setup(){
 		global.key2.down=ini_read_real("key2","down",unset)
 		global.key2.right=ini_read_real("key2","right",unset)
 		
-		global.key2.ok=ini_read_real("key2","ok",vk_enter)
-		global.key2.back=ini_read_real("key2","back",vk_shift)
-		global.key2.menu=ini_read_real("key2","menu",vk_control)
+		global.key2.z=ini_read_real("key2","ok",vk_enter)
+		global.key2.x=ini_read_real("key2","back",vk_shift)
+		global.key2.c=ini_read_real("key2","menu",vk_control)
 		
 		global.key2.res=ini_read_real("key2","res",unset)
 		global.key2.esc=ini_read_real("key2","esc",unset)
