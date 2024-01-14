@@ -5,7 +5,7 @@ if room=r_init {
 	scr_getkey_setup()
 	room_goto(r_gameplay_test)
 	
-	
+	for (i=0;i<1024;i++) global.msg[i]=""
 	
 }
 
