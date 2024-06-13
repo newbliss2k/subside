@@ -1,6 +1,6 @@
-if place_meeting(x,y,o_chara) and getkey("z") {
-	
-	global.msg[0]="Hello this is test message"
-	global.msg[1]="Another Test message LOL"
-	
+
+if global.gamemode="walk" and place_meeting(x,y,o_chara) and getkey("z",pressed) {
+	getkey("z",clear)
+	global.msg[0]="Тест.<timer=30><c4=65535=65535=255=255> Этот текст написан желто-красным цветом.<timer=30><color/> А этот нет."
+	global.msg[1]="В этом тексте есть <color=65280>задержка<color/> после знаков препинания./n<timer=30>Круто,<timer=15> не прадва ли?"
 }

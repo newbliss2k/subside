@@ -1,34 +1,33 @@
-if timer=0 {
+
+if !(current_char_str()="") {
 	
-	if !string_char_at(global.msg[current_msg],current_char)="" {
-		
+	if getkey("z",pressed) while !(current_char_str()="") {
 		scr_writer_format()
-		active=1
-		letter=instance_create_depth(-15999,x,y,o_letter)
-		with letter {
-			
-			letter=string_char_at(global.msg[current_msg],current_char)
-			font=o_writer.font
-			
-		}
-		x+=string_width(string_char_at(global.msg[current_msg],current_char))
-		current_char++
-		timer++
+		write()
+	}
+	else {
+		/*if timer<1 {
+			scr_writer_format()
+			write()
+		} else timer--*/
+		scr_writer_format()
+		if timer<1 write() else timer--
+	}
+	
+} else {
+	
+	if getkey("z",pressed) {
 		
-	} else {
-		
-		if getkey("z") {
-			
-			with o_letter destroy=1
-			
-		}
+		with o_letter destroy=1
+		current_msg++
+		if global.msg[current_msg]="" reset() else reset(1)
 		
 	}
 	
-} else timer--
-
-if active=1 {
-	
-	draw_sprite_stretched(s_dialogbox1,-1,dialogbox_x_padding,dialogbox_y_padding,dialogbox_width,dialogbox_height)
-	
 }
+
+if active=1 dbox_y1=lerp(dbox_y1,dbox_y1_open,dbox_anim_speed) else dbox_y1=lerp(dbox_y1,dbox_y1_close,dbox_anim_speed)
+draw_set_color(0)
+draw_rectangle(dbox_x1,dbox_y1,dbox_x2,dbox_y2,0)
+draw_set_color(c_white)
+

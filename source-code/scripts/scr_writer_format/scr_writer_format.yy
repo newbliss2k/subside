@@ -1,11 +1,13 @@
 {
-  "resourceType": "GMScript",
-  "resourceVersion": "1.0",
-  "name": "scr_writer_format",
-  "isCompatibility": false,
-  "isDnD": false,
-  "parent": {
-    "name": "Writer",
-    "path": "folders/Objects/Writer.yy",
+  "$GMScript":"",
+  "%Name":"scr_writer_format",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_writer_format",
+  "parent":{
+    "name":"Writer",
+    "path":"folders/Objects/Writer.yy",
   },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
 }

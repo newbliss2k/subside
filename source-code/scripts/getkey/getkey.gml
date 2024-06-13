@@ -38,10 +38,10 @@ function scr_getkey_setup(){
 		
 		// secondary keys definition
 		
-		global.key2.up=ini_read_real("key2","up",unset)
-		global.key2.left=ini_read_real("key2","left",unset)
-		global.key2.down=ini_read_real("key2","down",unset)
-		global.key2.right=ini_read_real("key2","right",unset)
+		global.key2.up=ini_read_real("key2","up",ord("W"))
+		global.key2.left=ini_read_real("key2","left",ord("A"))
+		global.key2.down=ini_read_real("key2","down",ord("S"))
+		global.key2.right=ini_read_real("key2","right",ord("D"))
 		
 		global.key2.z=ini_read_real("key2","ok",vk_enter)
 		global.key2.x=ini_read_real("key2","back",vk_shift)
