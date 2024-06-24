@@ -16,39 +16,37 @@ function scr_getkey_setup(){
 	#macro unset -7
 	
 	// key load from file
-	
-	ini_open("file_config")
 		
 		global.key1={}
 		global.key2={}
 		
 		// primary keys definition
 		
-		global.key1.up=ini_read_real("key1","up",vk_up)
-		global.key1.left=ini_read_real("key1","left",vk_left)
-		global.key1.down=ini_read_real("key1","down",vk_down)
-		global.key1.right=ini_read_real("key1","right",vk_right)
+		global.key1.up		=	vk_up
+		global.key1.left	=	vk_left
+		global.key1.down	=	vk_down
+		global.key1.right	=	vk_right
 		
-		global.key1.z=ini_read_real("key1","ok",ord("Z"))
-		global.key1.x=ini_read_real("key1","back",ord("X"))
-		global.key1.c=ini_read_real("key1","menu",ord("C"))
+		global.key1.ok		=	ord("A")
+		global.key1.cancel	=	ord("S")
+		global.key1.menu	=	ord("D")
 		
-		global.key1.res=ini_read_real("key1","res",ord("R"))
-		global.key1.esc=ini_read_real("key1","esc",vk_escape)
+		global.key1.res		=	ord("R")
+		global.key1.esc		=	vk_escape
 		
 		// secondary keys definition
 		
-		global.key2.up=ini_read_real("key2","up",ord("W"))
-		global.key2.left=ini_read_real("key2","left",ord("A"))
-		global.key2.down=ini_read_real("key2","down",ord("S"))
-		global.key2.right=ini_read_real("key2","right",ord("D"))
+		global.key2.up		=	unset
+		global.key2.left	=	unset
+		global.key2.down	=	unset
+		global.key2.right	=	unset
 		
-		global.key2.z=ini_read_real("key2","ok",vk_enter)
-		global.key2.x=ini_read_real("key2","back",vk_shift)
-		global.key2.c=ini_read_real("key2","menu",vk_control)
+		global.key2.ok		=	unset
+		global.key2.cancel	=	unset
+		global.key2.menu	=	unset
 		
-		global.key2.res=ini_read_real("key2","res",unset)
-		global.key2.esc=ini_read_real("key2","esc",unset)
+		global.key2.res		=	unset
+		global.key2.esc		=	unset
 		
 	ini_close()
 	

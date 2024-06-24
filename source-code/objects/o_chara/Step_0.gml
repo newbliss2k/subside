@@ -1,13 +1,15 @@
+if getkey("esc") game_end()
+
 depth=-y
 
 x_moving=0
 y_moving=0
 
-if global.gamemode="walk" {
+if global.paused=0 and global.gamemode="walk" {
 	
 	scr_check_priorities()
 	
-	if getkey("z") {
+	if getkey("ok") {
 		x_speed=3
 		y_speed=3
 	}

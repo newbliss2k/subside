@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"o_handler_draw64_ui",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"o_handler_draw64_ui",
+  "parent":{
+    "name":"Chara",
+    "path":"folders/Objects/Chara.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
