@@ -14,6 +14,13 @@
 		new_line_offset=24
 		
 		
+		alpha2=0
+		create=0
+		x_border=0
+		y_border=0
+		yscale2=0
+		
+		
 function current_char_str(_offset=0) {
 	return string_char_at(global.msg[current_msg],current_char+_offset)
 }

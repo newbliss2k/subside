@@ -1,4 +1,4 @@
-if (global.osflavor != 4)
+if (global.osflavor != os_android)
     instance_destroy()
 _joy_rightp = 0
 _joy_leftp = 0

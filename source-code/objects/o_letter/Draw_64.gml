@@ -1,4 +1,4 @@
-if global.paused=0 {
+if global.game.pause=0 {
 	
 	draw_set_font(font)
 	if destroy=1 {

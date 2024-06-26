@@ -1,4 +1,4 @@
-if (global.osflavor == 4)
+if (global.osflavor == os_android)
 {
     virtual_key_delete(virtual_key_z)
     virtual_key_delete(virtual_key_x)

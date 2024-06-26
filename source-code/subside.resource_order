@@ -16,6 +16,7 @@
     {"name":"Tilesets","order":4,"path":"folders/Tilesets.yy",},
   ],
   "ResourceOrderSettings":[
+    {"name":"font_normal24","order":1,"path":"fonts/font_normal24/font_normal24.yy",},
     {"name":"o_chara","order":2,"path":"objects/o_chara/o_chara.yy",},
     {"name":"o_control","order":1,"path":"objects/o_control/o_control.yy",},
     {"name":"o_letter","order":2,"path":"objects/o_letter/o_letter.yy",},
@@ -27,6 +28,7 @@
     {"name":"device_mouse_current_y_to_gui","order":3,"path":"scripts/device_mouse_current_y_to_gui/device_mouse_current_y_to_gui.yy",},
     {"name":"getkey","order":1,"path":"scripts/getkey/getkey.yy",},
     {"name":"init","order":3,"path":"scripts/init/init.yy",},
+    {"name":"menus","order":4,"path":"scripts/menus/menus.yy",},
     {"name":"o_handler_draw64_ui","order":1,"path":"scripts/o_handler_draw64_ui/o_handler_draw64_ui.yy",},
     {"name":"saveload","order":2,"path":"scripts/saveload/saveload.yy",},
     {"name":"scr_writer_format","order":1,"path":"scripts/scr_writer_format/scr_writer_format.yy",},

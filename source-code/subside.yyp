@@ -38,6 +38,7 @@
   "name":"subside",
   "resources":[
     {"id":{"name":"font_normal","path":"fonts/font_normal/font_normal.yy",},},
+    {"id":{"name":"font_normal24","path":"fonts/font_normal24/font_normal24.yy",},},
     {"id":{"name":"o_chara","path":"objects/o_chara/o_chara.yy",},},
     {"id":{"name":"o_control","path":"objects/o_control/o_control.yy",},},
     {"id":{"name":"o_handler","path":"objects/o_handler/o_handler.yy",},},
@@ -53,6 +54,7 @@
     {"id":{"name":"device_mouse_current_y_to_gui","path":"scripts/device_mouse_current_y_to_gui/device_mouse_current_y_to_gui.yy",},},
     {"id":{"name":"getkey","path":"scripts/getkey/getkey.yy",},},
     {"id":{"name":"init","path":"scripts/init/init.yy",},},
+    {"id":{"name":"menus","path":"scripts/menus/menus.yy",},},
     {"id":{"name":"o_handler_draw64_ui","path":"scripts/o_handler_draw64_ui/o_handler_draw64_ui.yy",},},
     {"id":{"name":"saveload","path":"scripts/saveload/saveload.yy",},},
     {"id":{"name":"scr_check_priorities","path":"scripts/scr_check_priorities/scr_check_priorities.yy",},},
