@@ -1,126 +1,115 @@
-function o_handler_draw64_ui_menu_script(_alpha){
+function o_handler_draw64_ui() {
 	
-	if global.menu._selector<0 global.menu._selector=0
-	if global.menu._selector>array_length(options)-1 global.menu._selector=array_length(options)-1
+	log_console()
+	draw_text_color(0,0,string(menu_selector),c_white,c_white,c_white,c_white,1)
 	
-	draw_set_alpha(_alpha)
 	
-	if getkey("up",pressed) {
-				if global.menu._selector=0 global.menu._selector=array_length(options)-1
-				else global.menu._selector--
-			}
-			
-			if getkey("down",pressed) {
-				if global.menu._selector=array_length(options)-1 global.menu._selector=0
-				else global.menu._selector++
-			}
-			
-			if getkey("ok",released) {
-				options[global.menu._selector,1]()
-				if global.menu._selector<0 global.menu._selector=0
-				if global.menu._selector>array_length(options)-1 global.menu._selector=array_length(options)-1
-				getkey("ok",clear)
-			}
-			
-			draw_set_font(font_normal24)
+	if global.game.pause=1 {
 		
-			draw_set_color(accent_color)
-			var _w = string_width(options[global.menu._selector][0])
-			if align=0 {
-				global.menu._selector_x1=lerp(global.menu._selector_x1,x_padding-_w/2-global.menu._selector_x_padding,0.5)
-				global.menu._selector_x2=lerp(global.menu._selector_x2,x_padding+_w/2+global.menu._selector_x_padding,0.5)
-			}
-			else {
-				global.menu._selector_x1=lerp(global.menu._selector_x1,x_padding-global.menu._selector_x_padding,0.5)
-				global.menu._selector_x2=lerp(global.menu._selector_x2,x_padding+global.menu._selector_x_padding+_w,0.5)
-			}
-			
-			global.menu._selector_y1=lerp(global.menu._selector_y1,y_padding+(global.menu._selector+0)*y_string_h-5,0.5)
-			global.menu._selector_y2=lerp(global.menu._selector_y2,y_padding+(global.menu._selector+1)*y_string_h-5,0.5)
-		
-			draw_rectangle(global.menu._selector_x1,global.menu._selector_y1,global.menu._selector_x2,global.menu._selector_y2,0)
-		
-			for (var _i=0;_i<array_length(options);_i++) {
-				
-				var _wf = string_width(options[_i][0])
-				
-				draw_set_color(accent_color*!(global.menu._selector=_i))
-				if align=0 {
-					draw_text(x_padding-_wf/2,y_padding+_i*y_string_h,options[_i][0])
-				}
-				else {
-					draw_text(x_padding,y_padding+_i*y_string_h,options[_i][0])
-				}
-				
-				if (device_mouse_y_to_gui(0)>y_padding+_i*y_string_h-5) and (device_mouse_y_to_gui(0)<y_padding+(_i+1)*y_string_h-5) {
-					global.menu._selector=_i
-				}
-				
-			}
-			
-			var _wf = string_width(title)
-			
-			draw_set_color(accent_color)
-			draw_text(x_padding-_wf/2,title_y,title)
-			
-			if !(display_text=0) {
-				_wf = string_width(display_text)
-				draw_text(x_padding-_wf/2,display_text_y,display_text)
-				
-			}
-			
-			draw_set_alpha(1)
-}
-
-// DRAW FUNCTIONS
-
-function o_handler_draw_begin(){
-	
-	//--------------------------------------------------------------
-    shader_reset();
-	//--------------------------------------------------------------
-	
-	if room=r_init {
-		draw_set_alpha(0.1)
-		draw_set_color(c_white)
-		var _grid=32
-		for (var _i=0; _i<(1920/_grid); _i++) draw_line(_i*_grid,0,_i*_grid,1080)
-		for (var _i=0; _i<(1080/_grid); _i++) draw_line(0,_i*_grid,1920,_i*_grid)
-		draw_set_alpha(1)
-	}
-}
-
-// DRAW64 FUNCTIONS
-
-function o_handler_draw64_ui(){
-	
-	var _screen = struct_get(global.menu,global.game.screen)
-	with _screen {
-		
-		if global.game.pause=1 {
-			draw_set_color(c_blue)
-			draw_set_alpha(0.25)
-			draw_rectangle(0,0,display_get_gui_width(),display_get_gui_height(),0)
-			
-			draw_set_color(c_black)
-			draw_set_alpha(0.5)
-			draw_rectangle(0,0,display_get_gui_width(),display_get_gui_height(),0)
+		if getkey("down",pressed) {
+			if menu_selector=(array_length(global.game.menu.options)-1) menu_selector=0 
+			else menu_selector++
+		}
+		else if getkey("up",pressed) {
+			if menu_selector=0 menu_selector=(array_length(global.game.menu.options)-1)
+			else menu_selector--
 		}
 		
-		if (global.game.pause=1) or (room=r_init) o_handler_draw64_ui_menu_script(1)
+		if getkey("ok",pressed) {
+			global.game.menu.options[menu_selector][1]()
+		}
+		
+		menu_alpha=lerp(menu_alpha,global.game.menu.alpha,menu_lerp_speed)
+		menu_alpha_bg=lerp(menu_alpha_bg,global.game.menu.alpha_bg,menu_lerp_speed)
+		
 	}
-	
-	
-	
-	// GAME OVER UI
-	
-	
-	
-	
-}
-
-function o_handler_draw64_default(){
-	
+	else {
+		menu_alpha=lerp(menu_alpha,0,menu_lerp_speed)
+		menu_alpha_bg=lerp(menu_alpha_bg,0,menu_lerp_speed)
+	}
+		
+		draw_set_color(c_black)
+		draw_set_alpha(menu_alpha_bg)
+		draw_rectangle(0,0,display_get_gui_width(),display_get_gui_height(),0)
+		
+		draw_set_alpha(menu_alpha)
+		
+		var _menu_x
+		if global.game.menu.x_pos=-1 _menu_x=global.game.menu.x_offset
+		else if global.game.menu.x_pos=1 _menu_x=display_get_gui_width()-global.game.menu.x_offset
+		else if global.game.menu.x_pos=0 _menu_x=display_get_gui_width()/2
+		
+		var _menu_y
+		if global.game.menu.y_pos=-1 _menu_y=global.game.menu.y_offset
+		
+		
+		
+		draw_set_font(font_title)
+		
+		var _menu_caption_x
+		if global.game.menu.x_pos=-1 _menu_caption_x=_menu_x
+		else if global.game.menu.x_pos=1 _menu_caption_x=_menu_x-string_width(global.game.menu.caption)
+		else if global.game.menu.x_pos=0 _menu_caption_x=_menu_x-string_width(global.game.menu.caption)/2
+		
+		var _menu_caption_y
+		if global.game.menu.y_pos=-1 _menu_caption_y=_menu_y-string_height(global.game.menu.caption)
+		
+		draw_set_color(global.game.menu.color)
+		draw_text(_menu_caption_x,_menu_caption_y,global.game.menu.caption)
+		
+		
+		draw_set_font(font_normal)
+		
+		var _menu_selector_y1
+		if menu_selector=0 _menu_selector_y1=_menu_y+string_height(global.game.menu.options[0][0])
+		else {
+			_menu_selector_y1=_menu_y+string_height(global.game.menu.options[0][0])
+			for (var _i=0; _i<menu_selector; _i++) {
+				_menu_selector_y1+=string_height(global.game.menu.options[_i][0])
+			}
+		}
+		
+		var _menu_selector_y2=_menu_selector_y1+string_height(global.game.menu.options[menu_selector][0])
+		
+		var _menu_selector_x1
+		var _menu_selector_x2
+		if global.game.menu.x_pos=-1 or global.game.menu.x_pos=1 {
+			_menu_selector_x1=_menu_x
+			_menu_selector_x2=_menu_x-global.game.menu.x_pos*string_width(global.game.menu.options[menu_selector][0])
+		}
+		else if global.game.menu.x_pos=0 {
+			_menu_selector_x1=_menu_x-string_width(global.game.menu.options[menu_selector][0])/2
+			_menu_selector_x2=_menu_x+string_width(global.game.menu.options[menu_selector][0])/2
+		}
+		
+		global.game.menu.menu_selector_x1=lerp(global.game.menu.menu_selector_x1,_menu_selector_x1-5,menu_lerp_speed)
+		global.game.menu.menu_selector_x2=lerp(global.game.menu.menu_selector_x2,_menu_selector_x2+2,menu_lerp_speed)
+		global.game.menu.menu_selector_y1=lerp(global.game.menu.menu_selector_y1,_menu_selector_y1,menu_lerp_speed)
+		global.game.menu.menu_selector_y2=lerp(global.game.menu.menu_selector_y2,_menu_selector_y2-1,menu_lerp_speed)
+		
+		draw_set_color(global.game.menu.options[menu_selector][2])
+		draw_rectangle(global.game.menu.menu_selector_x1,global.game.menu.menu_selector_y1,global.game.menu.menu_selector_x2,global.game.menu.menu_selector_y2,0)
+		
+		var _text_y=_menu_y
+		for (var _i=0; _i<=array_length(global.game.menu.options)-1; _i++) {
+			
+			var __x
+			if global.game.menu.x_pos=-1 __x=_menu_x
+			else if global.game.menu.x_pos=1 __x=_menu_x-string_width(global.game.menu.options[_i][0])
+			else if global.game.menu.x_pos=0 __x=_menu_x-string_width(global.game.menu.optoins[_i][0])/2
+			
+			if global.game.menu.y_pos=-1 {
+				_text_y+=string_height(global.game.menu.options[_i][0])
+			}
+			var __y=_text_y
+			
+			if menu_selector=_i draw_set_color(c_black)
+			else draw_set_color(global.game.menu.options[_i][2])
+			
+			draw_text(__x,__y,global.game.menu.options[_i][0])
+			
+		}
+		
 	
 	
 }

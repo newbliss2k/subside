@@ -39,7 +39,7 @@ function reset(_soft=0) {
 	
 	if _soft=0 {
 		for (i=0;i<1024;i++) global.msg[i]=""
-		global.gamemode="walk"
+		global.game.mode="walk"
 		active=0
 		current_msg=0
 		
@@ -74,7 +74,7 @@ reset()
 function write() {
 	
 	active=1
-	global.gamemode="dialogue"
+	global.game.mode="dialogue"
 	letter=instance_create_depth(x,y,-14001,o_letter)
 	
 	with letter {

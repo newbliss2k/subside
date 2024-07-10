@@ -5,7 +5,7 @@ depth=-y
 x_moving=0
 y_moving=0
 
-if global.game.pause=0 and global.gamemode="walk" {
+if global.game.pause=0 and global.game.mode="walk" {
 	
 	scr_check_priorities()
 	

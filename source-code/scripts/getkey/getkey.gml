@@ -87,7 +87,7 @@ function getkey(_key,_type=0){
 	var _key1=variable_struct_get(global.key1,_key)
 	var _key2=variable_struct_get(global.key2,_key)
 	//show_debug_message(string(mb_left)+" "+string(mb_middle)+" "+string(mb_right)+" "+string(mb_any)+" "+string(mb_none))
-	show_debug_message("1:"+string(_key1)+" 2:"+string(_key2)+" 0:"+string(_key))
+	//show_debug_message("1:"+string(_key1)+" 2:"+string(_key2)+" 0:"+string(_key))
 	
 	switch _type {
 		

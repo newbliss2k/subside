@@ -1,5 +1,5 @@
 {
-  "$GMScript":"",
+  "$GMScript":"v1",
   "%Name":"o_handler_draw64_ui",
   "isCompatibility":false,
   "isDnD":false,

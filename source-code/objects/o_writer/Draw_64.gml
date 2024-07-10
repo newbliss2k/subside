@@ -1,3 +1,4 @@
+
 if global.game.pause=0 {
 	
 	if !(current_char_str()="") {
@@ -31,5 +32,6 @@ if global.game.pause=0 {
 }
 
 	draw_set_color(0)
+	draw_set_alpha(1)
 	draw_rectangle(dbox_x1,dbox_y1,dbox_x2,dbox_y2,0)
 	draw_set_color(c_white)
