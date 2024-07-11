@@ -1,22 +1,22 @@
 function o_handler_draw64_ui() {
 	
 	log_console()
-	draw_text_color(0,0,string(menu_selector),c_white,c_white,c_white,c_white,1)
+	draw_text_color(0,0,string(global.game.menu.selector),c_white,c_white,c_white,c_white,1)
 	
 	
 	if global.game.pause=1 {
 		
 		if getkey("down",pressed) {
-			if menu_selector=(array_length(global.game.menu.options)-1) menu_selector=0 
-			else menu_selector++
+			if global.game.menu.selector=(array_length(global.game.menu.options)-1) global.game.menu.selector=0 
+			else global.game.menu.selector++
 		}
 		else if getkey("up",pressed) {
-			if menu_selector=0 menu_selector=(array_length(global.game.menu.options)-1)
-			else menu_selector--
+			if global.game.menu.selector=0 global.game.menu.selector=(array_length(global.game.menu.options)-1)
+			else global.game.menu.selector--
 		}
 		
 		if getkey("ok",pressed) {
-			global.game.menu.options[menu_selector][1]()
+			global.game.menu.options[global.game.menu.selector][1]()
 		}
 		
 		menu_alpha=lerp(menu_alpha,global.game.menu.alpha,menu_lerp_speed)
@@ -61,25 +61,25 @@ function o_handler_draw64_ui() {
 		draw_set_font(font_normal)
 		
 		var _menu_selector_y1
-		if menu_selector=0 _menu_selector_y1=_menu_y+string_height(global.game.menu.options[0][0])
+		if global.game.menu.selector=0 _menu_selector_y1=_menu_y+string_height(global.game.menu.options[0][0])
 		else {
 			_menu_selector_y1=_menu_y+string_height(global.game.menu.options[0][0])
-			for (var _i=0; _i<menu_selector; _i++) {
+			for (var _i=0; _i<global.game.menu.selector; _i++) {
 				_menu_selector_y1+=string_height(global.game.menu.options[_i][0])
 			}
 		}
 		
-		var _menu_selector_y2=_menu_selector_y1+string_height(global.game.menu.options[menu_selector][0])
+		var _menu_selector_y2=_menu_selector_y1+string_height(global.game.menu.options[global.game.menu.selector][0])
 		
 		var _menu_selector_x1
 		var _menu_selector_x2
 		if global.game.menu.x_pos=-1 or global.game.menu.x_pos=1 {
 			_menu_selector_x1=_menu_x
-			_menu_selector_x2=_menu_x-global.game.menu.x_pos*string_width(global.game.menu.options[menu_selector][0])
+			_menu_selector_x2=_menu_x-global.game.menu.x_pos*string_width(global.game.menu.options[global.game.menu.selector][0])
 		}
 		else if global.game.menu.x_pos=0 {
-			_menu_selector_x1=_menu_x-string_width(global.game.menu.options[menu_selector][0])/2
-			_menu_selector_x2=_menu_x+string_width(global.game.menu.options[menu_selector][0])/2
+			_menu_selector_x1=_menu_x-string_width(global.game.menu.options[global.game.menu.selector][0])/2
+			_menu_selector_x2=_menu_x+string_width(global.game.menu.options[global.game.menu.selector][0])/2
 		}
 		
 		global.game.menu.menu_selector_x1=lerp(global.game.menu.menu_selector_x1,_menu_selector_x1-5,menu_lerp_speed)
@@ -87,7 +87,7 @@ function o_handler_draw64_ui() {
 		global.game.menu.menu_selector_y1=lerp(global.game.menu.menu_selector_y1,_menu_selector_y1,menu_lerp_speed)
 		global.game.menu.menu_selector_y2=lerp(global.game.menu.menu_selector_y2,_menu_selector_y2-1,menu_lerp_speed)
 		
-		draw_set_color(global.game.menu.options[menu_selector][2])
+		draw_set_color(global.game.menu.options[global.game.menu.selector][2])
 		draw_rectangle(global.game.menu.menu_selector_x1,global.game.menu.menu_selector_y1,global.game.menu.menu_selector_x2,global.game.menu.menu_selector_y2,0)
 		
 		var _text_y=_menu_y
@@ -103,7 +103,7 @@ function o_handler_draw64_ui() {
 			}
 			var __y=_text_y
 			
-			if menu_selector=_i draw_set_color(c_black)
+			if global.game.menu.selector=_i draw_set_color(c_black)
 			else draw_set_color(global.game.menu.options[_i][2])
 			
 			draw_text(__x,__y,global.game.menu.options[_i][0])

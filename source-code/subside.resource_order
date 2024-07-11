@@ -32,6 +32,8 @@
     {"name":"log_console","order":4,"path":"scripts/log_console/log_console.yy",},
     {"name":"o_handler_draw64_ui","order":2,"path":"scripts/o_handler_draw64_ui/o_handler_draw64_ui.yy",},
     {"name":"saveload","order":2,"path":"scripts/saveload/saveload.yy",},
+    {"name":"scr_global_menus","order":6,"path":"scripts/scr_global_menus/scr_global_menus.yy",},
+    {"name":"scr_menu_functions","order":5,"path":"scripts/scr_menu_functions/scr_menu_functions.yy",},
     {"name":"scr_writer_format","order":1,"path":"scripts/scr_writer_format/scr_writer_format.yy",},
     {"name":"s_chara_mouse","order":1,"path":"sprites/s_chara_mouse/s_chara_mouse.yy",},
     {"name":"s_control_ckey","order":2,"path":"sprites/s_control_ckey/s_control_ckey.yy",},

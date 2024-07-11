@@ -27,7 +27,6 @@ _mouse_x = device_mouse_x_to_gui(0)/3*2
 _mouse_y = device_mouse_y_to_gui(0)/3*2
 _mouse_factor = 3
 
-menu_selector=0
 menu_lerp_speed=0.5
 
 menu_alpha=0
