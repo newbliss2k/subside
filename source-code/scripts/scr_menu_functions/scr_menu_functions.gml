@@ -34,35 +34,35 @@ function _menu_setup2(){
 		
 		draw_set_font(font_normal)
 		
-		if selector=0 menu_selector_y1=_menu_y+string_height(options[0][0])
+		if selector=0 menu_selector_y1=_menu_y+string_height(options[0].title)
 		else {
-			menu_selector_y1=_menu_y+string_height(options[0][0])
+			menu_selector_y1=_menu_y+string_height(options[0].title)
 			for (var _i=0; _i<selector; _i++) {
-				menu_selector_y1+=string_height(options[_i][0])
+				menu_selector_y1+=string_height(options[_i].title)
 			}
 		}
 		
-		menu_selector_y2=menu_selector_y1+string_height(options[selector][0])
+		menu_selector_y2=menu_selector_y1+string_height(options[selector].title)
 		
 		if x_pos=-1 or x_pos=1 {
 			menu_selector_x1=_menu_x
-			menu_selector_x2=_menu_x-x_pos*string_width(options[selector][0])
+			menu_selector_x2=_menu_x-x_pos*string_width(options[selector].title)
 		}
 		else if x_pos=0 {
-			menu_selector_x1=_menu_x-string_width(options[selector][0])/2
-			menu_selector_x2=_menu_x+string_width(options[selector][0])/2
+			menu_selector_x1=_menu_x-string_width(options[selector].title)/2
+			menu_selector_x2=_menu_x+string_width(options[selector].title)/2
 		}
 		
 		menu_selector_y1=_menu_y
-		menu_selector_y2=menu_selector_y1+string_height(options[0][0])
+		menu_selector_y2=menu_selector_y1+string_height(options[0].title)
 		
 		if x_pos=-1 or x_pos=1 {
 			menu_selector_x1=_menu_x
-			menu_selector_x2=_menu_x-x_pos*string_width(options[0][0])
+			menu_selector_x2=_menu_x-x_pos*string_width(options[0].title)
 		}
 		else if x_pos=0 {
-			menu_selector_x1=_menu_x-string_width(options[0][0])/2
-			menu_selector_x2=_menu_x+string_width(options[0][0])/2
+			menu_selector_x1=_menu_x-string_width(options[0].title)/2
+			menu_selector_x2=_menu_x+string_width(options[0].title)/2
 		}
 		
 		menu_selector_x1-=5
@@ -75,6 +75,6 @@ function _menu_open(_object) {
 	
 	global.game.menu=_object
 	selector=0
-	_menu_setup2()
+	with _object _menu_setup2()
 	
 }
