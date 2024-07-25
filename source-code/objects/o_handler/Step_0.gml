@@ -1,1 +1,1 @@
-if getkey("menu",pressed) global.game.pause=!global.game.pause
+if getkey("menu",pressed) if global.game.mode="walk" global.game.pause=!global.game.pause

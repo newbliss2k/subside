@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_global_menus",
+  "%Name":"scr_writer_base_scripts",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_global_menus",
+  "name":"scr_writer_base_scripts",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Writer",
+    "path":"folders/Objects/Writer.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

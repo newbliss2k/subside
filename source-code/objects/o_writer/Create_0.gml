@@ -22,7 +22,7 @@
 		
 		
 function current_char_str(_offset=0) {
-	return string_char_at(global.msg[current_msg],current_char+_offset)
+	return string_char_at(global.msg[current_msg].text,current_char+_offset)
 }
 
 function get_keyword(_end_char=">") {
@@ -38,7 +38,7 @@ function get_keyword(_end_char=">") {
 function reset(_soft=0) {
 	
 	if _soft=0 {
-		for (i=0;i<1024;i++) global.msg[i]=""
+		global.msg=[]
 		global.game.mode="walk"
 		active=0
 		current_msg=0
@@ -78,7 +78,7 @@ function write() {
 	letter=instance_create_depth(x,y,-14001,o_letter)
 	
 	with letter {
-		str=string_char_at(global.msg[o_writer.current_msg],o_writer.current_char)
+		str=string_char_at(global.msg[o_writer.current_msg].text,o_writer.current_char)
 		xscale=o_writer.xscale
 		yscale=o_writer.yscale
 		yscale2=1

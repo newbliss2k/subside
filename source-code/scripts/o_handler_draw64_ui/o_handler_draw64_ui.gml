@@ -93,6 +93,8 @@ function o_handler_draw64_ui() {
 		var _text_y=_menu_y
 		for (var _i=0; _i<=array_length(global.game.menu.options)-1; _i++) {
 			
+			if variable_struct_exists(global.game.menu.options[_i],"func_step") global.game.menu.options[_i].func_step()
+			
 			var __x
 			if global.game.menu.x_pos=-1 __x=_menu_x
 			else if global.game.menu.x_pos=1 __x=_menu_x-string_width(global.game.menu.options[_i].title)

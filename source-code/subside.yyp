@@ -35,7 +35,7 @@
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.6.1.160",
+    "IDEVersion":"2024.6.2.162",
   },
   "name":"subside",
   "resources":[
@@ -61,8 +61,9 @@
     {"id":{"name":"o_handler_draw64_ui","path":"scripts/o_handler_draw64_ui/o_handler_draw64_ui.yy",},},
     {"id":{"name":"saveload","path":"scripts/saveload/saveload.yy",},},
     {"id":{"name":"scr_check_priorities","path":"scripts/scr_check_priorities/scr_check_priorities.yy",},},
-    {"id":{"name":"scr_global_menus","path":"scripts/scr_global_menus/scr_global_menus.yy",},},
+    {"id":{"name":"scr_init_global_menus_setup","path":"scripts/scr_init_global_menus_setup/scr_init_global_menus_setup.yy",},},
     {"id":{"name":"scr_menu_functions","path":"scripts/scr_menu_functions/scr_menu_functions.yy",},},
+    {"id":{"name":"scr_writer_base_scripts","path":"scripts/scr_writer_base_scripts/scr_writer_base_scripts.yy",},},
     {"id":{"name":"scr_writer_format","path":"scripts/scr_writer_format/scr_writer_format.yy",},},
     {"id":{"name":"s_chara_mask","path":"sprites/s_chara_mask/s_chara_mask.yy",},},
     {"id":{"name":"s_chara_mouse","path":"sprites/s_chara_mouse/s_chara_mouse.yy",},},
