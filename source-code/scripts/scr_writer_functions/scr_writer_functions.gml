@@ -126,6 +126,8 @@ function poll_handle(_only_ir=0) {
 		
 			poll_selector--
 			if poll_selector<0 poll_selector=array_length(_poll_f)-1
+			
+			audio_play_sound(sfx_ui_select1,1,0,0.25)
 		
 		}
 	
@@ -133,6 +135,8 @@ function poll_handle(_only_ir=0) {
 		
 			poll_selector++
 			if poll_selector>=array_length(_poll_f) poll_selector=0
+			
+			audio_play_sound(sfx_ui_select1,1,0,0.25)
 		
 		}
 	
@@ -142,7 +146,7 @@ function poll_handle(_only_ir=0) {
 			_poll_f[poll_selector].func(_only_ir)
 			
 			if _only_ir audio_play_sound(sfx_ui_shatter_01,1,0,0.25)
-			else audio_play_sound(sfx_ui_select,1,0,0.25)
+			else audio_play_sound(sfx_ui_select2,1,0,0.25)
 			
 			var _o_wr_poll_echo = instance_create_depth(0,0,depth,o_wr_poll_echo)
 			

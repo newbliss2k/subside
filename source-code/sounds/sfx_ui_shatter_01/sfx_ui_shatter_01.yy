@@ -12,8 +12,8 @@
   "duration":2.622041,
   "name":"sfx_ui_shatter_01",
   "parent":{
-    "name":"FX",
-    "path":"folders/Sounds/FX.yy",
+    "name":"SFX",
+    "path":"folders/Sounds/SFX.yy",
   },
   "preload":false,
   "resourceType":"GMSound",
