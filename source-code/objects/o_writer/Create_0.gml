@@ -1,3 +1,5 @@
+instance_create_depth(0,0,-16000,o_wr_ok_ind)
+
 // POSITION CONSTANTS
 		
 		dbox_x1=0
@@ -20,9 +22,32 @@
 		y_border=0
 		yscale2=0
 		
+		poll_selector=0
+		
+		poll_x=15
+		poll_y=390
+		
+		poll_selector_alpha=0
+		poll_string_height=20
+		
+		poll_s_x1=0
+		poll_s_x2=0
+		poll_s_y1=0
+		poll_s_y2=0
+		
+		poll_border_x=8
+		poll_border_y=4
+		
+		poll_duration_border=5
+		
+		max_line_width=840
 		
 function current_char_str(_offset=0) {
 	return string_char_at(global.msg[current_msg].text,current_char+_offset)
+}
+
+function char_str(_offset=0) {
+	return string_char_at(global.msg[current_msg].text,_offset)
 }
 
 function get_keyword(_end_char=">") {
@@ -32,6 +57,15 @@ function get_keyword(_end_char=">") {
 		_key+=current_char_str()
 	}
 	current_char+=2
+	return _key
+}
+
+function get_keyword_soft(_end_char=">") {
+	var _key=""
+	while !(current_char_str(1)=_end_char) {
+		current_char++
+		_key+=current_char_str()
+	}
 	return _key
 }
 
@@ -47,6 +81,11 @@ function reset(_soft=0) {
 	
 	current_char=1
 	timer=0
+	timer_snd=0
+	
+	timer_line=0
+	timer_redline=0
+	
 	letter=0
 	
 
@@ -70,41 +109,3 @@ function reset(_soft=0) {
 }
 
 reset()
-
-function write() {
-	
-	active=1
-	global.game.mode="dialogue"
-	letter=instance_create_depth(x,y,-14001,o_letter)
-	
-	with letter {
-		str=string_char_at(global.msg[o_writer.current_msg].text,o_writer.current_char)
-		xscale=o_writer.xscale
-		yscale=o_writer.yscale
-		yscale2=1
-		angle=o_writer.angle
-		c1=o_writer.c1
-		c2=o_writer.c2
-		c3=o_writer.c3
-		c4=o_writer.c4
-		alpha=o_writer.alpha
-		alpha2=0
-			
-		font=o_writer.font
-		destroy=0
-		create=1
-		
-		
-		x_border=5
-		y_border=5
-	}
-	
-	draw_set_font(font)
-	if current_char_str()=" "
-		x+=string_width(current_char_str())+2
-	else
-		x+=string_width(current_char_str())-2
-	current_char++
-	timer++
-	
-}

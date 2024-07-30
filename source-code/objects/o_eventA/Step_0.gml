@@ -1,20 +1,52 @@
 
-if (global.game.pause=0) and (global.game.mode="walk") and place_meeting(x,y,o_chara) and getkey("ok",pressed) {
+if (global.game.pause=0) and (global.game.mode="walk") and place_meeting(x,y,o_chara) and getkey("ok",pressed) and (o_writer.active=0) {
 	getkey("ok",clear)
 	
-	msg_text("Тест.<timer=30><c4=65535=65535=255=255> Этот текст написан желто-красным цветом.<timer=30><color/> А этот нет.")
-	msg_text("В этом тексте есть <color=65280>задержка<color/> после знаков препинания./n<timer=30>Круто,<timer=15> не прадва ли?")
+	msg_text("Здравствуйте, и добро пожаловать в тестовую комнату! Я - тестовая табличка.")
+	//msg_text("В этом тексте есть <color=65280>задержка<color/> после знаков препинания. <timer=30>Круто,<timer=15> не прадва ли?")
+	msg_text("В этом тексте есть <color=65280>задержка<color/> после знаков препинания. <timer=30>Круто,<timer=15> не прадва ли?")
 	
 	msg_poll([
 		
-		/* 1 */ {text:"Вариант 1",func: function(){
+		/* 0 */ {ir:1, text:"Нет.",func: function(_ir=0){
 			
-			msg_text("Вы выбрали Вариант 1! <timer=30>Так держать!")
+			if _ir {
+				
+				msg_text("Это было грубо<timer=15>.<timer=15>.<timer=30> Когда ты перебиваешь собеседника, ему может стать обидно! Помни это, когда разговариваешь с другими персонажами.")
+				msg_text("Больше так не делай,<timer=15> хорошо?")
+				
+				msg_poll([
+				
+					/* 0 */ {ir:1, text:"Иди нахуй.",func: function(_ir=0){
+						
+						msg_text("Ха-ха! Сам иди нахуй.")
+						
+					}},
+					
+					/* 1 */ {text:"Извини, я не знал!",func: function(_ir=0){
+						
+						msg_text("Ничего страшного! Все мы ошибаемся.")
+						
+					}},
+				
+				])
+			}
+			else {
+				msg_text("Жаль... Ты можешь выбрать другие варианты ответов, используя стрелки или кнопки W и S. Просто поговори с табличкой ещё раз!")
+			}
 			
 		}},
-		/* 2 */ {text:"Вариант 2",func: function(){
+		
+		/* 1 */ {text:"Вариант 2.",func: function(_ir=0){
 			
 			msg_text("Вы выбрали Вариант 2. <timer=30>Не так круто,<timer=10> как Вариант 1,<timer=10> но тоже неплохо!")
+			
+		}},
+		
+		/* 2 */ {text:"Порно пискьи попки",func: function(_ir=0){
+			
+			msg_text("Какой вы некультурный!")
+			msg_text("Болье не несите такую чепуху!")
 			
 		}},
 		

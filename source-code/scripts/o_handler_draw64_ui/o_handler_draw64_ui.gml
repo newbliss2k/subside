@@ -1,7 +1,7 @@
 function o_handler_draw64_ui() {
 	
 	log_console()
-	draw_text_color(0,0,string(global.game.menu.selector),c_white,c_white,c_white,c_white,1)
+	//draw_text_color(0,0,string(global.game.menu.selector),c_white,c_white,c_white,c_white,1)
 	
 	
 	if global.game.pause=1 {

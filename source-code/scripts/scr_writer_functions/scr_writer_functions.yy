@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"scr_writer_functions",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"scr_writer_functions",
+  "parent":{
+    "name":"Writer",
+    "path":"folders/Objects/Writer.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

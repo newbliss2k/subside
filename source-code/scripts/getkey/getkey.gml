@@ -29,6 +29,9 @@ function scr_getkey_setup(){
 		global.key1.down	=	vk_down
 		global.key1.right	=	vk_right
 		
+		global.key1.poll_up		=	vk_up
+		global.key1.poll_down	=	vk_down
+		
 		global.key1.ok		=	ord("A")
 		global.key1.cancel	=	ord("S")
 		global.key1.menu	=	ord("D")
@@ -42,6 +45,9 @@ function scr_getkey_setup(){
 		global.key2.left	=	unset
 		global.key2.down	=	unset
 		global.key2.right	=	unset
+		
+		global.key2.poll_up		=	ord("W")
+		global.key2.poll_down	=	ord("S")
 		
 		global.key2.ok		=	unset
 		global.key2.cancel	=	unset

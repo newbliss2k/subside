@@ -1,1 +1,1 @@
-o_handler_draw64_ui()
+draw_set_alpha(menu_alpha_bg)
