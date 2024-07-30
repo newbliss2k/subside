@@ -3,7 +3,8 @@ draw_set_color(c_white)
 
 timer_snd--
 
-/*draw_text(0,0,string(timer_line))
+/*
+draw_text(0,0,string(timer_line))
 draw_text(0,30,string(timer_redline))
 if (timer_line=timer_redline) and timer>0 log_push("ok")*/
 

@@ -56,59 +56,55 @@ function poll_handle(_only_ir=0) {
 	
 	var _poll_offset = poll_string_height*array_length(_poll)
 	
+	var _max_len = 0
+	for (var _i=0; _i<array_length(_poll); _i++) _max_len=max(_max_len,string_width(_poll[_i].text))
+		
+	var __poll_rect_x1 = poll_x-poll_border_x
+	var __poll_rect_x2 = poll_x+poll_border_x+_max_len
+	var __poll_rect_y1 = poll_y-array_length(_poll)*poll_string_height-poll_border_y
+	var __poll_rect_y2 = poll_y+poll_border_y-array_length(_poll)*poll_string_height*(1-poll_selector_alpha)
+		
+	// Нижний слой прогрессбара
+	draw_set_color(0)
+	draw_set_alpha(poll_selector_alpha)
+	draw_roundrect(__poll_rect_x1,__poll_rect_y1-poll_duration_border,__poll_rect_x2,__poll_rect_y2,0)
+		
+	// Средний слой прогрессбара
+	draw_set_color(c_red)
+	draw_set_alpha(poll_selector_alpha*0.4)
+	var __poll_length = __poll_rect_x2-__poll_rect_x1
+	__poll_length = __poll_length*0.3
+	draw_roundrect(__poll_rect_x1,__poll_rect_y1-poll_duration_border,__poll_rect_x1+__poll_length,__poll_rect_y2,0)
+		
+	// Верхний слой прогрессбара
+	draw_set_color(c_white)
+	draw_set_alpha(poll_selector_alpha*0.2)
+	var __poll_length1 = __poll_rect_x2-__poll_rect_x1
+	__poll_length1 = __poll_length1*0.3*timer_line/timer_redline
+		
+	draw_roundrect(__poll_rect_x1,__poll_rect_y1-poll_duration_border,__poll_rect_x1+__poll_length1,__poll_rect_y2,0)
+		
+	// Обводка прогрессбара
+	draw_set_alpha(poll_selector_alpha*0.4)
+	draw_set_color(c_white)
+	draw_roundrect(__poll_rect_x1,__poll_rect_y1-poll_duration_border,__poll_rect_x2,__poll_rect_y2,1)
+		
+	// Нижний слой окна выбора ответов
+	draw_set_color(0)
+	draw_set_alpha(poll_selector_alpha*2)
+	draw_roundrect(__poll_rect_x1,__poll_rect_y1,__poll_rect_x2,__poll_rect_y2,0)
+		
+	// Обводка окна выбора ответов
+	draw_set_alpha(poll_selector_alpha*0.4)
+	draw_set_color(c_white)
+	draw_roundrect(__poll_rect_x1,__poll_rect_y1,__poll_rect_x2,__poll_rect_y2,1)
+	
 	if array_length(_poll_f)>0 {
 		
 		poll_s_x1=lerp(poll_s_x1,poll_x-3,0.5)
 		poll_s_x2=lerp(poll_s_x2,poll_x+string_width(_poll_f[poll_selector].text)+3,0.5)
 		poll_s_y1=lerp(poll_s_y1,poll_y+(poll_selector)*poll_string_height-_poll_offset,0.5)
 		poll_s_y2=lerp(poll_s_y2,poll_y+(poll_selector+1)*poll_string_height+1-_poll_offset,0.5)
-		
-		
-		
-		
-		var _max_len = 0
-		for (var _i=0; _i<array_length(_poll); _i++) _max_len=max(_max_len,string_width(_poll[_i].text))
-		
-		var __poll_rect_x1 = poll_x-poll_border_x
-		var __poll_rect_x2 = poll_x+poll_border_x+_max_len
-		var __poll_rect_y1 = poll_y-array_length(_poll)*poll_string_height-poll_border_y
-		var __poll_rect_y2 = poll_y+poll_border_y
-		
-		// Нижний слой прогрессбара
-		draw_set_color(0)
-		draw_set_alpha(poll_selector_alpha)
-		draw_roundrect(__poll_rect_x1,__poll_rect_y1-poll_duration_border,__poll_rect_x2,__poll_rect_y2,0)
-		
-		// Средний слой прогрессбара
-		draw_set_color(c_red)
-		draw_set_alpha(poll_selector_alpha*0.4)
-		var __poll_length = __poll_rect_x2-__poll_rect_x1
-		__poll_length = __poll_length*0.3
-		draw_roundrect(__poll_rect_x1,__poll_rect_y1-poll_duration_border,__poll_rect_x1+__poll_length,__poll_rect_y2,0)
-		
-		// Верхний слой прогрессбара
-		draw_set_color(c_white)
-		draw_set_alpha(poll_selector_alpha*0.2)
-		var __poll_length1 = __poll_rect_x2-__poll_rect_x1
-		__poll_length1 = __poll_length1*0.3*timer_line/timer_redline
-		
-		draw_roundrect(__poll_rect_x1,__poll_rect_y1-poll_duration_border,__poll_rect_x1+__poll_length1,__poll_rect_y2,0)
-		
-		// Обводка прогрессбара
-		draw_set_alpha(poll_selector_alpha*0.4)
-		draw_set_color(c_white)
-		draw_roundrect(__poll_rect_x1,__poll_rect_y1-poll_duration_border,__poll_rect_x2,__poll_rect_y2,1)
-		
-		// Нижний слой окна выбора ответов
-		draw_set_color(0)
-		draw_set_alpha(poll_selector_alpha)
-		draw_roundrect(__poll_rect_x1,__poll_rect_y1,__poll_rect_x2,__poll_rect_y2,0)
-		
-		// Обводка окна выбора ответов
-		draw_set_alpha(poll_selector_alpha*0.4)
-		draw_set_color(c_white)
-		draw_roundrect(__poll_rect_x1,__poll_rect_y1,__poll_rect_x2,__poll_rect_y2,1)
-		
 		
 		if _only_ir draw_set_color(c_red)
 		else draw_set_color(c_white)
@@ -155,6 +151,8 @@ function poll_handle(_only_ir=0) {
 			_o_wr_poll_echo.poll_s_y1=poll_y+(poll_selector)*poll_string_height-_poll_offset
 			_o_wr_poll_echo.poll_s_y2=poll_y+(poll_selector+1)*poll_string_height+1-_poll_offset
 			
+			
+			
 			_o_wr_poll_echo.poll_x=poll_x
 			_o_wr_poll_echo.poll_y=poll_y
 			
@@ -164,11 +162,18 @@ function poll_handle(_only_ir=0) {
 			_o_wr_poll_echo.text=_poll_f[poll_selector].text
 			_o_wr_poll_echo.poll_string_height=poll_string_height
 			_o_wr_poll_echo.poll_offset=_poll_offset
+			_o_wr_poll_echo.array_len=array_length(_poll)
+			_o_wr_poll_echo.poll_border_y=poll_border_y
 			
 			_o_wr_poll_echo.__poll_rect_x1=__poll_rect_x1
 			_o_wr_poll_echo.__poll_rect_x2=__poll_rect_x2
 			_o_wr_poll_echo.__poll_rect_y1=__poll_rect_y1
 			_o_wr_poll_echo.__poll_rect_y2=__poll_rect_y2
+			
+			_o_wr_poll_echo._poll_rect_y2d=__poll_rect_y2
+			
+			_o_wr_poll_echo.timer_line=timer_line
+			_o_wr_poll_echo.timer_redline=timer_redline
 			
 			poll_selector=0
 			

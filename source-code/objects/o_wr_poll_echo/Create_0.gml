@@ -6,3 +6,5 @@ blink=blink_def
 rep=7
 
 selector=1
+
+poll_duration_border=o_writer.poll_duration_border

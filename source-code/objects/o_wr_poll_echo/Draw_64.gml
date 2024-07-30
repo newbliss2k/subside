@@ -1,9 +1,36 @@
-
+__poll_rect_y2 = poll_y+poll_border_y-array_len*poll_string_height*(1-poll_rect_alpha)
 
 draw_set_alpha(poll_rect_alpha)
 		
+			// Нижний слой прогрессбара
+	draw_set_color(0)
+	draw_set_alpha(poll_rect_alpha)
+	draw_roundrect(__poll_rect_x1,__poll_rect_y1-poll_duration_border,__poll_rect_x2,__poll_rect_y2,0)
+		
+	// Средний слой прогрессбара
+	draw_set_color(c_red)
+	draw_set_alpha(poll_rect_alpha*0.4)
+	var __poll_length = __poll_rect_x2-__poll_rect_x1
+	__poll_length = __poll_length*0.3
+	draw_roundrect(__poll_rect_x1,__poll_rect_y1-poll_duration_border,__poll_rect_x1+__poll_length,__poll_rect_y2,0)
+		
+	// Верхний слой прогрессбара
+	draw_set_color(c_white)
+	draw_set_alpha(poll_rect_alpha*0.2)
+	var __poll_length1 = __poll_rect_x2-__poll_rect_x1
+	__poll_length1 = __poll_length1*0.3*timer_line/timer_redline
+		
+	draw_roundrect(__poll_rect_x1,__poll_rect_y1-poll_duration_border,__poll_rect_x1+__poll_length1,__poll_rect_y2,0)
+		
+	// Обводка прогрессбара
+	draw_set_alpha(poll_rect_alpha*0.4)
+	draw_set_color(c_white)
+	draw_roundrect(__poll_rect_x1,__poll_rect_y1-poll_duration_border,__poll_rect_x2,__poll_rect_y2,1)
+		
+		draw_set_alpha(poll_rect_alpha*2)
 		draw_set_color(0)
 		draw_roundrect(__poll_rect_x1,__poll_rect_y1,__poll_rect_x2,__poll_rect_y2,0)
+		
 		draw_set_alpha(poll_rect_alpha*0.2)
 		draw_set_color(c_white)
 		draw_roundrect(__poll_rect_x1,__poll_rect_y1,__poll_rect_x2,__poll_rect_y2,1)
