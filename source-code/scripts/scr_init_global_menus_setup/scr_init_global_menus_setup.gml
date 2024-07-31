@@ -110,7 +110,7 @@ with global.menus {
 					global.game.pause=0
 					_menu_open(global.menus.pause)
 					global.msg=[]
-					global.msg[0]="<timer=10>... <timer=30>Ты что,<timer=20> <c4=16711680=16711680=65535=65535>хохол?<color/><timer=30> Сам иди <color=255>нахуй.<color/>"
+					global.msg[0]="<timer=10>... <timer=25>Ты что,<timer=20> <c4=16711680=16711680=65535=65535>хохол?<color/><timer=25> Сам иди <color=255>нахуй.<color/>"
 					
 				},
 				color:	color,

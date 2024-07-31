@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_writer_functions",
+  "%Name":"scr_event_functions",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_writer_functions",
+  "name":"scr_event_functions",
   "parent":{
-    "name":"Writer",
-    "path":"folders/Objects/Writer.yy",
+    "name":"Events",
+    "path":"folders/Objects/Events.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

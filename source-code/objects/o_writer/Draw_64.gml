@@ -4,7 +4,7 @@ draw_set_color(c_white)
 timer_snd--
 
 /*
-draw_text(0,0,string(timer_line))
+draw_text(0,0,string(timer_line*0.3))
 draw_text(0,30,string(timer_redline))
 if (timer_line=timer_redline) and timer>0 log_push("ok")*/
 
@@ -52,7 +52,15 @@ if global.game.pause=0 and array_length(global.msg)>current_msg {
 				
 			}
 			
-			else poll_selector_alpha=lerp(poll_selector_alpha,0,0.1)
+			else {
+				poll_selector_alpha=lerp(poll_selector_alpha,0,0.1)
+				if (timer_line*0.3)>timer_redline {
+					getkey("ok",clear) // Очищаем кнопку действия, чтобы избавиться от возможных багов.
+					with o_letter destroy=1 // Передаем сигнал самоуничтожения созданным объектам-буквам.
+					current_msg++ // Переходим к следующему сообщению.
+					if !(array_length(global.msg)>current_msg) reset() else reset(1)
+				}
+			}
 			
 		}
 	
@@ -81,12 +89,12 @@ if global.game.pause=0 and array_length(global.msg)>current_msg {
 			
 			else {
 				poll_selector_alpha=lerp(poll_selector_alpha,0,0.1)
-				/*with o_wr_ok_ind {
-					x=820
-					y=o_writer.dbox_y1
-					draw_sprite_ext(sprite_index,image_index,x,y,0.5,0.5,0,c_white,1)
-				}*/
-				
+				if (timer_line*0.3)>timer_redline {
+					getkey("ok",clear) // Очищаем кнопку действия, чтобы избавиться от возможных багов.
+					with o_letter destroy=1 // Передаем сигнал самоуничтожения созданным объектам-буквам.
+					current_msg++ // Переходим к следующему сообщению.
+					if !(array_length(global.msg)>current_msg) reset() else reset(1)
+				}
 			}
 		
 		}

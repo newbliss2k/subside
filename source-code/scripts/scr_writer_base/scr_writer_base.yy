@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_writer_base_scripts",
+  "%Name":"scr_writer_base",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_writer_base_scripts",
+  "name":"scr_writer_base",
   "parent":{
     "name":"Writer",
     "path":"folders/Objects/Writer.yy",

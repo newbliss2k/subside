@@ -1,10 +1,11 @@
 
-if (global.game.pause=0) and (global.game.mode="walk") and place_meeting(x,y,o_chara) and getkey("ok",pressed) and (o_writer.active=0) {
-	getkey("ok",clear)
+
+
+if player_event() {
 	
-	msg_text("Здравствуйте,<timer=15> и добро пожаловать в тестовую комнату!<timer=30> Я -<timer=15> тестовая табличка.")
-	//msg_text("В этом тексте есть <color=65280>задержка<color/> после знаков препинания. <timer=30>Круто,<timer=15> не прадва ли?")
-	msg_text("В этом тексте есть <color=65280>задержка<color/> после знаков препинания.<timer=25> Круто,<timer=15> не прадва ли?<timer=15> ")
+	msg_text("Здравствуйте,<timer=15> и добро пожаловать в тестовую комнату!<timer=25> /nЯ -<timer=15> тестовая табличка.")
+	//msg_text("В этом тексте есть <color=65280>задержка<color/> после знаков препинания. <timer=25>Круто,<timer=15> не прадва ли?")
+	msg_text("В этом тексте есть <color=65280>задержка<color/> после знаков препинания.<timer=25> Круто,<timer=15> не прадва ли?<timer=25> ")
 	
 	msg_poll([
 		
@@ -12,20 +13,45 @@ if (global.game.pause=0) and (global.game.mode="walk") and place_meeting(x,y,o_c
 			
 			if _ir {
 				
-				msg_text("Это было грубо<timer=15>.<timer=15>.<timer=25> Когда ты перебиваешь собеседника,<timer=15> ему может стать обидно!<timer=25> Помни это,<timer=15> когда разговариваешь с другими персонажами.")
+				msg_sleep(25)
+				msg_text("Это было грубо<timer=15>.<timer=15>.<timer=15>.<timer=25> Когда ты перебиваешь собеседника,<timer=15> ему может стать обидно!<timer=25> Помни это,<timer=15> когда разговариваешь с другими персонажами.")
 				msg_text("Больше так не делай,<timer=15> хорошо?<timer=15> ")
 				
 				msg_poll([
 				
-					/* 0 */ {ir:1, text:"\"Завались\"",func: function(_ir=0){
+					/* 0 */ {ir:1, text:"\"Иди нахуй.\"",func: function(_ir=0){
 						
-						msg_text("Ты грубый.<timer=25> Я-то не обижусь,<timer=15> а другие NPC могут.")
+						msg_text("Ха-ха!<timer=25> Сам иди нахуй.")
 						
 					}},
 					
 					/* 1 */ {text:"\"Извини, я не знал!\"",func: function(_ir=0){
 						
 						msg_text("Ничего страшного!<timer=25> Все мы ошибаемся.")
+						msg_text("Но в качестве наказания тебе придется <color=12632256>ZOV <color=16776960>СВО <color=255>SVO <color=12632256>GOIДА <color=16776960>VOINA <color=255>UKRAINA <color=12632256>Z<color=16776960>Z<color=255>Z<color/>VZ")
+						msg_func(function(){
+							o_glitch.intensity=0.3
+							o_glitch.spd=5
+							o_glitch.noise=0.000
+							audio_play_sound(sfx_glitch1,2,0)
+							audio_pause_sound(global.game.ost)
+							game_set_speed(3,gamespeed_fps)
+						})
+						for(var _i=0;_i<3;_i++){
+							//msg_sleep(1)
+							msg_func(function(){
+								view_xport[0]=irandom_range(0,100)
+								view_yport[0]=irandom_range(0,50)
+								view_wport[0]=irandom_range(50,100)
+								view_hport[0]=irandom_range(50,200)
+							})
+						}
+						msg_func(function(){
+							room_goto(r_battle)
+							bktglitch_deactivate()
+							game_set_speed(60,gamespeed_fps)
+						})
+						
 						
 					}},
 				

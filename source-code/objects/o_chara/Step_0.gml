@@ -1,4 +1,4 @@
-if getkey("esc") game_end()
+
 
 depth=-y
 

@@ -7,6 +7,7 @@ function scr_writer_redline_check() {
 		current_char++
 	}
 	current_char=_current_char_safe
+	if timer_redline<30 timer_redline=30
 }
 
 function scr_writer_format(_safe=0){
@@ -19,7 +20,7 @@ function scr_writer_format(_safe=0){
 		var _test_string = ""
 		while !(current_char_str(_offset)=" " or current_char_str(_offset)="") {
 			
-			while current_char_str()="/" or current_char_str()="<" switch current_char_str() {
+			while current_char_str(_offset)="/" or current_char_str(_offset)="<" switch current_char_str(_offset) {
 				case "/":	_offset+=2
 							break
 				
@@ -34,6 +35,8 @@ function scr_writer_format(_safe=0){
 		}
 		
 		if (x+string_width(_test_string))>max_line_width {
+			//log_push(_test_string)
+			//log_push(string(string_width(_test_string)))
 			x=text_x
 			y+=new_line_offset
 			current_char++

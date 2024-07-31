@@ -1,3 +1,13 @@
+function player_event(_key="ok") {
+	
+	var _key_pressed = getkey(_key,pressed)
+	
+	if (global.game.pause=0) and (global.game.mode="walk") and place_meeting(x,y,o_chara) and _key_pressed and (o_writer.active=0) {
+		getkey("ok",clear)
+		return (global.game.pause=0) and (global.game.mode="walk") and place_meeting(x,y,o_chara) and _key_pressed and (o_writer.active=0)
+	}
+}
+
 // Данной функцией можно добавить объект в конец списка MSG.
 function msg_append(_struct) {
 	
@@ -37,6 +47,7 @@ function msg_poll(_poll,_timer=30) {
 	
 }
 
+// Данная функция добавит ожидание в миллисекундах.
 function msg_sleep(_ms) {
 	
 	for(var _i=0;_i<_ms;_i++) array_push(global.msg,{})
