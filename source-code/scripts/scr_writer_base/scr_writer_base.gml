@@ -8,8 +8,8 @@ function write() {
 	
 	with letter {
 		str=string_char_at(global.msg[o_writer.current_msg].text,o_writer.current_char)
-		var _no_sound_letters = [""," ",".","!","?"]
-		if array_contains(_no_sound_letters,str) {} else if o_writer.timer_snd<1 {
+		var _sound_letters = ["У","Е","Ы","А","О","Э","Я","И","Ю","E","Y","U","I","O","A","у","е","ы","а","о","э","я","и","ю","e","y","u","i","o","a"]
+		if array_contains(_sound_letters,str) {//} else if o_writer.timer_snd<1 {
 			audio_play_sound(sfx_writer_npc,1,0,0.25)
 			o_writer.timer_snd=6
 		}
