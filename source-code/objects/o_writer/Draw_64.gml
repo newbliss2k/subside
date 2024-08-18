@@ -38,7 +38,7 @@ if global.game.pause=0 and array_length(global.msg)>current_msg {
 			else {
 				scr_writer_redline_check()
 				scr_writer_format() // Этой функцией мы интерпретируем текст.
-				if timer<1 write() else timer--
+				if timer<1 write(1) else timer--
 				// Этой функцией мы осуществляем выведение символа, когда таймер меньше единицы.
 				// Это нужно, чтобы реализовать задержку в тексте (например, в знаках препинаний).
 				

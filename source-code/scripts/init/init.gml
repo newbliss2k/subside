@@ -8,6 +8,7 @@ with global.game {
 	pause=0
 	menu=0
 	mode="walk"
+	language="ru"
 }
 
 

@@ -26,6 +26,6 @@ application_surface_draw_enable(true); // disabling automatic redrawing of the a
 
 //__bktgtlich_ui_init();
 
-intensity=0.00//25//1.010000
+intensity=0.001//25//1.010000
 spd=1
 noise=1

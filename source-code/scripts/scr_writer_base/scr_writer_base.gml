@@ -1,4 +1,4 @@
-function write() {
+function write(_nosound=0) {
 	
 	active=1
 	global.game.mode="dialogue"
@@ -9,7 +9,7 @@ function write() {
 	with letter {
 		str=string_char_at(global.msg[o_writer.current_msg].text,o_writer.current_char)
 		var _sound_letters = ["У","Е","Ы","А","О","Э","Я","И","Ю","E","Y","U","I","O","A","у","е","ы","а","о","э","я","и","ю","e","y","u","i","o","a"]
-		if array_contains(_sound_letters,str) {//} else if o_writer.timer_snd<1 {
+		if array_contains(_sound_letters,str) and _nosound {//} else if o_writer.timer_snd<1 {
 			audio_play_sound(sfx_writer_npc,1,0,0.25)
 			o_writer.timer_snd=6
 		}
@@ -73,7 +73,7 @@ function poll_handle(_only_ir=0) {
 	draw_set_color(c_red)
 	draw_set_alpha(poll_selector_alpha*0.4)
 	var __poll_length = __poll_rect_x2-__poll_rect_x1
-	__poll_length = __poll_length*0.3
+	__poll_length = __poll_length*0.28
 	draw_roundrect(__poll_rect_x1,__poll_rect_y1-poll_duration_border,__poll_rect_x1+__poll_length,__poll_rect_y2,0)
 		
 	// Верхний слой прогрессбара

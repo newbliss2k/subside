@@ -1,4 +1,13 @@
-if getkey("esc") game_end()
+if getkey("esc") {
+	if game_end_timer>=game_end_timer_max
+		game_end()
+	else {
+		game_end_timer++
+	}
+}
+else game_end_timer=max(0,game_end_timer-1)
+
+draw_text(0,0,"")
 
 if getkey("menu",pressed) if global.game.mode="walk" global.game.pause=!global.game.pause
 

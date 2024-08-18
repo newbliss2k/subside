@@ -11,7 +11,7 @@ draw_set_alpha(poll_rect_alpha)
 	draw_set_color(c_red)
 	draw_set_alpha(poll_rect_alpha*0.4)
 	var __poll_length = __poll_rect_x2-__poll_rect_x1
-	__poll_length = __poll_length*0.3
+	__poll_length = __poll_length*0.28
 	draw_roundrect(__poll_rect_x1,__poll_rect_y1-poll_duration_border,__poll_rect_x1+__poll_length,__poll_rect_y2,0)
 		
 	// Верхний слой прогрессбара

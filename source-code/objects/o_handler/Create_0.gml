@@ -38,3 +38,5 @@ menu_alpha_bg=0
 
 lerp_speed=0.2
 
+game_end_timer=0
+game_end_timer_max=60

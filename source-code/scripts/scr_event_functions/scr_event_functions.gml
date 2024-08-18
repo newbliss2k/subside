@@ -41,7 +41,7 @@ function msg_func_add(_func) {
 // Данная функция добавит выбор вариантов ответов к последнему объекту в списке.
 function msg_poll(_poll,_timer=30) {
 	
-	array_last(global.msg).poll=_poll
+	array_last(global.msg).poll=_poll	
 	
 	for(var _i=0;_i<_timer;_i++) array_push(global.msg,{})
 	

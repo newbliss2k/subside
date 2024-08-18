@@ -1,4 +1,7 @@
 // Activating the shader
+
+
+
 bktglitch_activate();
 
 bktglitch_set_intensity(intensity);

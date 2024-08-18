@@ -76,6 +76,7 @@
     {"id":{"name":"scr_check_priorities","path":"scripts/scr_check_priorities/scr_check_priorities.yy",},},
     {"id":{"name":"scr_event_functions","path":"scripts/scr_event_functions/scr_event_functions.yy",},},
     {"id":{"name":"scr_init_global_menus_setup","path":"scripts/scr_init_global_menus_setup/scr_init_global_menus_setup.yy",},},
+    {"id":{"name":"scr_localizer","path":"scripts/scr_localizer/scr_localizer.yy",},},
     {"id":{"name":"scr_menu_functions","path":"scripts/scr_menu_functions/scr_menu_functions.yy",},},
     {"id":{"name":"scr_writer_base","path":"scripts/scr_writer_base/scr_writer_base.yy",},},
     {"id":{"name":"scr_writer_format","path":"scripts/scr_writer_format/scr_writer_format.yy",},},
