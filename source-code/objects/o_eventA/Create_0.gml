@@ -1,1 +1,3 @@
-random_get_seed()
+// Inherit the parent event
+event_inherited();
+

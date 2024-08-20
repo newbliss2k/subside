@@ -88,6 +88,7 @@ if global.game.pause=0 and array_length(global.msg)>current_msg {
 			}
 			
 			else {
+				key_draw_alpha=min(key_draw_alpha+0.1,1)
 				poll_selector_alpha=lerp(poll_selector_alpha,0,0.1)
 				if (timer_line*0.3)>timer_redline {
 					getkey("ok",clear) // Очищаем кнопку действия, чтобы избавиться от возможных багов.
@@ -110,6 +111,8 @@ if global.game.pause=0 and array_length(global.msg)>current_msg {
 	
 }
 
+key_draw_alpha=max(key_draw_alpha-0.05,0)
+
 if active=1 dbox_y1=lerp(dbox_y1,dbox_y1_open,dbox_anim_speed) else dbox_y1=lerp(dbox_y1,dbox_y1_close,dbox_anim_speed)
 // Эта строчка отвечает за плавное выдвижение текстбокса.
 
@@ -117,3 +120,7 @@ draw_set_color(0)
 draw_set_alpha(1)
 draw_rectangle(dbox_x1,dbox_y1,dbox_x2,dbox_y2,0) // Этой строчкой мы рисуем текстбокс-прямоугольник.
 draw_set_color(c_white)
+draw_set_alpha(key_draw_alpha)
+draw_sprite(sprite_index,image_index,800,dbox_y1+5)
+//draw_circular_bar(800,,timer_line*0.3,timer_redline,c_red,15,key_draw_alpha,0.5)
+//draw_wheel_ext(800,dbox_y1,10,9,c_red,timer_line*0.3,timer_redline,10,90,true,key_draw_alpha)

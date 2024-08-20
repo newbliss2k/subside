@@ -1,4 +1,4 @@
-__poll_rect_y2 = poll_y+poll_border_y-array_len*poll_string_height*(1-poll_rect_alpha)
+var __poll_rect_y2 = poll_y+poll_border_y-array_len*poll_string_height*(1-poll_rect_alpha)
 
 draw_set_alpha(poll_rect_alpha)
 		

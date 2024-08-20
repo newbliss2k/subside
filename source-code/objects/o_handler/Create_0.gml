@@ -32,6 +32,7 @@ _mouse_y = device_mouse_y_to_gui(0)/3*2
 _mouse_factor = 3
 
 menu_lerp_speed=0.5
+selector_create=1
 
 menu_alpha=0
 menu_alpha_bg=0

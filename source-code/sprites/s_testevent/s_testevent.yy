@@ -23,7 +23,7 @@
   ],
   "name":"s_testevent",
   "nineSlice":null,
-  "origin":0,
+  "origin":1,
   "parent":{
     "name":"Base Sprites",
     "path":"folders/Sprites/Base Sprites.yy",
@@ -75,7 +75,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":0,
+    "xorigin":10,
     "yorigin":0,
   },
   "swatchColours":null,

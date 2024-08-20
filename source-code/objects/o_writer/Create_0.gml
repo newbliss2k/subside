@@ -1,5 +1,3 @@
-instance_create_depth(0,0,-16000,o_wr_ok_ind)
-
 // POSITION CONSTANTS
 		
 		dbox_x1=0
@@ -42,6 +40,8 @@ instance_create_depth(0,0,-16000,o_wr_ok_ind)
 		
 		max_line_width=840
 		
+		key_draw_alpha=0
+		
 function current_char_str(_offset=0) {
 	return string_char_at(global.msg[current_msg].text,current_char+_offset)
 }
@@ -78,6 +78,8 @@ function reset(_soft=0) {
 		current_msg=0
 		
 	}
+	
+	poll_selector_create=1
 	
 	current_char=1
 	timer=0

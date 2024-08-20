@@ -101,10 +101,24 @@ function poll_handle(_only_ir=0) {
 	
 	if array_length(_poll_f)>0 {
 		
-		poll_s_x1=lerp(poll_s_x1,poll_x-3,0.5)
-		poll_s_x2=lerp(poll_s_x2,poll_x+string_width(_poll_f[poll_selector].text)+3,0.5)
-		poll_s_y1=lerp(poll_s_y1,poll_y+(poll_selector)*poll_string_height-_poll_offset,0.5)
-		poll_s_y2=lerp(poll_s_y2,poll_y+(poll_selector+1)*poll_string_height+1-_poll_offset,0.5)
+		if poll_selector_create=1 {
+			
+			poll_selector_create=0
+			
+			poll_s_x1=poll_x-3
+			poll_s_x2=poll_x+string_width(_poll_f[poll_selector].text)+3
+			poll_s_y1=poll_y+(poll_selector)*poll_string_height-_poll_offset
+			poll_s_y2=poll_y+(poll_selector+1)*poll_string_height+1-_poll_offset
+			
+		}
+		else {
+		
+			poll_s_x1=lerp(poll_s_x1,poll_x-3,0.5)
+			poll_s_x2=lerp(poll_s_x2,poll_x+string_width(_poll_f[poll_selector].text)+3,0.5)
+			poll_s_y1=lerp(poll_s_y1,poll_y+(poll_selector)*poll_string_height-_poll_offset,0.5)
+			poll_s_y2=lerp(poll_s_y2,poll_y+(poll_selector+1)*poll_string_height+1-_poll_offset,0.5)
+			
+		}
 		
 		if _only_ir draw_set_color(c_red)
 		else draw_set_color(c_white)
@@ -155,7 +169,7 @@ function poll_handle(_only_ir=0) {
 			_o_wr_poll_echo.poll_s_y1=poll_y+(poll_selector)*poll_string_height-_poll_offset
 			_o_wr_poll_echo.poll_s_y2=poll_y+(poll_selector+1)*poll_string_height+1-_poll_offset
 			
-			
+			poll_selector_create=1
 			
 			_o_wr_poll_echo.poll_x=poll_x
 			_o_wr_poll_echo.poll_y=poll_y
@@ -183,8 +197,6 @@ function poll_handle(_only_ir=0) {
 			
 			if _only_ir with o_letter destroy_ir=1 // Передаем сигнал самоуничтожения созданным объектам-буквам.
 			else with o_letter destroy=1
-			show_debug_message(array_length(global.msg))
-			show_debug_message(current_msg)
 			current_msg++ // Переходим к следующему сообщению.
 			if !(array_length(global.msg)>current_msg) reset(0) else reset(1)
 			// Если это было последнее сообщение, то делаем хард резет - приведение всех служебных переменных в изначальное состояние.

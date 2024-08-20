@@ -1,6 +1,6 @@
 // INIT SCRIPT
 
-scr_global_menus_setup()
+
 
 global.game={}
 with global.game {
@@ -8,9 +8,11 @@ with global.game {
 	pause=0
 	menu=0
 	mode="walk"
-	language="ru"
+	lang="ru"
 }
 
+scr_localizer()
+scr_global_menus_setup()
 
 global.options={}
 with global.options {

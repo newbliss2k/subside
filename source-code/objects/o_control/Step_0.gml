@@ -24,7 +24,9 @@ if (global.aspectratio != aspectratio_previous)
 aspectratio_previous = global.aspectratio
 
 // 
-var _angle = point_direction(jx, jy, device_mouse_current_x_to_gui(), device_mouse_current_y_to_gui())
+var _device_mouse_current_x_to_gui = device_mouse_current_x_to_gui()
+var _device_mouse_current_y_to_gui = device_mouse_current_y_to_gui()
+var _angle = point_direction(jx, jy, _device_mouse_current_x_to_gui, _device_mouse_current_y_to_gui)
 var _outerx = (jx + (dcos(_angle) * 62))
 var _outery = (jy + (dsin((_angle + 180)) * 62))
 var _deadzonex = (jx + (dcos(_angle) * (global.controller_deadzoner * 24)))

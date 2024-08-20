@@ -1,4 +1,4 @@
-random_get_seed()
+randomize()
 //////////////////////////////////
 //                              //
 //   bktGlitch 1.3.2            //
@@ -22,10 +22,11 @@ random_get_seed()
 bktglitch_init()
 application_surface_draw_enable(true); // disabling automatic redrawing of the application surface
 
+
 //display_set_gui_size(1280, 720); // hard-coding GUI size to HD
 
 //__bktgtlich_ui_init();
 
-intensity=0.001//25//1.010000
+intensity=1//25//1.010000
 spd=1
 noise=1

@@ -6,6 +6,11 @@ function player_event(_key="ok") {
 		getkey("ok",clear)
 		return (global.game.pause=0) and (global.game.mode="walk") and place_meeting(x,y,o_chara) and _key_pressed and (o_writer.active=0)
 	}
+	
+	if (global.game.pause=0) and (global.game.mode="walk") and place_meeting(x,y,o_chara) and (o_writer.active=0) image_alpha=min(image_alpha+0.05,1)
+	else image_alpha=max(image_alpha-0.05,0)
+	
+	draw_sprite_ext(s_keyboard_a,-1,x,y,0.5,0.5,0,c_white,image_alpha)
 }
 
 // Данной функцией можно добавить объект в конец списка MSG.
