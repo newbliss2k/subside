@@ -122,5 +122,5 @@ draw_rectangle(dbox_x1,dbox_y1,dbox_x2,dbox_y2,0) // Этой строчкой �
 draw_set_color(c_white)
 draw_set_alpha(key_draw_alpha)
 draw_sprite(sprite_index,image_index,800,dbox_y1+5)
-//draw_circular_bar(800,,timer_line*0.3,timer_redline,c_red,15,key_draw_alpha,0.5)
+draw_circular_bar(800,dbox_y1,timer_line*0.3,timer_redline,c_red,15,key_draw_alpha,5)
 //draw_wheel_ext(800,dbox_y1,10,9,c_red,timer_line*0.3,timer_redline,10,90,true,key_draw_alpha)

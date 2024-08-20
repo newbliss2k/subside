@@ -18,11 +18,11 @@ function o_handler_draw64_ui() {
 	
 	if global.game.pause=1 {
 		
-		if getkey("down",pressed) {
+		if getkey("poll_down",pressed) {
 			if global.game.menu.selector=(array_length(global.game.menu.options)-1) global.game.menu.selector=0 
 			else global.game.menu.selector++
 		}
-		else if getkey("up",pressed) {
+		else if getkey("poll_up",pressed) {
 			if global.game.menu.selector=0 global.game.menu.selector=(array_length(global.game.menu.options)-1)
 			else global.game.menu.selector--
 		}
@@ -72,6 +72,10 @@ function o_handler_draw64_ui() {
 		if global.game.menu.y_pos=-1 _menu_caption_y=_menu_y-string_height(_caption)
 		
 		draw_set_color(global.game.menu.color)
+		draw_rectangle(0,_menu_caption_y,display_get_gui_width(),_menu_caption_y+string_height(_caption)+6,0)
+		
+		draw_set_color(global.game.menu.color)
+		draw_text_outline(_menu_caption_x,_menu_caption_y,_caption)
 		draw_text(_menu_caption_x,_menu_caption_y,_caption)
 		
 		
@@ -138,9 +142,14 @@ function o_handler_draw64_ui() {
 			}
 			var __y=_text_y
 			
-			if global.game.menu.selector=_i draw_set_color(c_black)
+			var _outline_color = 0
+			if global.game.menu.selector=_i {
+				draw_set_color(0)
+				_outline_color = global.game.menu.options[_i].color
+			}
 			else draw_set_color(global.game.menu.options[_i].color)
 			
+			draw_text_outline(__x,__y,scr_handler_menu_get_title(_i),2,_outline_color)
 			draw_text(__x,__y,scr_handler_menu_get_title(_i))
 			
 		}

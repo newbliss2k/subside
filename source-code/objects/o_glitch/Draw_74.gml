@@ -19,5 +19,6 @@ bktglitch_set_rng_seed(1);
 
 draw_set_alpha(1)
 draw_surface(application_surface, 0, 0);
+surface_free(application_surface)
 
 bktglitch_set_intensity(1);

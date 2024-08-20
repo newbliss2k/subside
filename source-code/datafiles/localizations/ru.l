@@ -2,7 +2,7 @@
 
     "what_are_you_doing_here":"Ты не должен здесь находиться. Уходи прочь",
     "lang_name":"Русский язык",
-    "game_exit_message":"Удерживайте, чтобы выйти...",
+    "game_exit_message":"Удерживайте, чтобы выйти",
 
     "options_pause_menu_caption":"ПАУЗА",
     "options_pause_menu_resume":"Продолжить",

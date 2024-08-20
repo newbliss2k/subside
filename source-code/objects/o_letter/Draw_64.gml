@@ -36,8 +36,4 @@ if global.game.pause=0 {
 		y_border=lerp(y_border,0,0.1)
 	}
 }
-
-//draw_text_transformed_color(x,y,str,xscale,yscale,angle,c1,c2,c3,c4,alpha)
 draw_text_transformed_color(x+x_border,y+y_border+o_writer.dbox_y1,str,xscale,yscale*yscale2,angle,c1,c2,c3,c4,alpha*alpha2)
-//draw_text(mouse_y*2,mouse_x*2,"x: )
-//draw_text(x,y,"x: "+string(x)+"\ny: "+string(y))

@@ -16,6 +16,7 @@ if room=r_gameplay_test {
 global.osflavor=os_type
 global.aspectratio=display_get_width()/display_get_height()
 instance_create_depth(20,140,-15980,o_control)
+instance_create_depth(0,0,depth,o_glitch)
 
 var _camera_width	=	427
 var _camera_height	=	240

@@ -2,7 +2,7 @@
 
     "what_are_you_doing_here":"You're not supposed to be here. Go away",
     "lang_name":"English",
-    "game_exit_message":"Hold to exit...",
+    "game_exit_message":"Hold to exit",
     
     "options_pause_menu_caption":"PAUSE",
     "options_pause_menu_resume":"Resume",
