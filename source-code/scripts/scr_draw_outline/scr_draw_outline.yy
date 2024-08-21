@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"device_mouse_current_y_to_gui",
+  "%Name":"scr_draw_outline",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"device_mouse_current_y_to_gui",
+  "name":"scr_draw_outline",
   "parent":{
     "name":"Simple Scripts",
     "path":"folders/Scripts/Simple Scripts.yy",

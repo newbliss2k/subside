@@ -1,4 +1,4 @@
-function scr_localizer() {
+function scr_init_localizer() {
 	// Put supported languages here
 	global.langs = [
 		"ru",

@@ -13,6 +13,12 @@ function player_event(_key="ok") {
 	draw_sprite_ext(s_keyboard_a,-1,x,y,0.5,0.5,0,c_white,image_alpha)
 }
 
+function player_encounter(_move=0,_speed=0) {
+	
+	return place_meeting(x,y,o_chara)
+	
+}
+
 // Данной функцией можно добавить объект в конец списка MSG.
 function msg_append(_struct) {
 	

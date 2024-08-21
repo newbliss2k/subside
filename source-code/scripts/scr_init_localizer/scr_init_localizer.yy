@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_localizer",
+  "%Name":"scr_init_localizer",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_localizer",
+  "name":"scr_init_localizer",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

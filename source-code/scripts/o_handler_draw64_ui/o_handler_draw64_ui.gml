@@ -74,8 +74,8 @@ function o_handler_draw64_ui() {
 		draw_set_color(global.game.menu.color)
 		draw_rectangle(0,_menu_caption_y,display_get_gui_width(),_menu_caption_y+string_height(_caption)+6,0)
 		
-		draw_set_color(global.game.menu.color)
-		draw_text_outline(_menu_caption_x,_menu_caption_y,_caption)
+		draw_set_color(0)
+		draw_text_outline(_menu_caption_x,_menu_caption_y,_caption,2,c_white)
 		draw_text(_menu_caption_x,_menu_caption_y,_caption)
 		
 		

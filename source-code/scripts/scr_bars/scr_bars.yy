@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_bars",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Simple Scripts",
+    "path":"folders/Scripts/Simple Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

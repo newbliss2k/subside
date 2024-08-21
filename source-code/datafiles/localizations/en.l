@@ -16,8 +16,13 @@
     "options_debug_menu_idi_nahui":"Iдi нахуй",
 
     "options_settings_menu_caption":"SETTINGS",
+    "options_settings_menu_fullscreen0":"Switch to fullscreen",
+    "options_settings_menu_fullscreen1":"Switch to window mode",
+    "options_settings_menu_resolution":"Текущее разрешение: ",
 
     "event_loza":"Vine.<timer=25> It seems like you can't climb anywhere along it.",
+
+    "party_name_carol":"Carol",
 
     "options_back":"Back"
 

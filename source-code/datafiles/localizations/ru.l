@@ -16,8 +16,13 @@
     "options_debug_menu_idi_nahui":"Iдi нахуй",
 
     "options_settings_menu_caption":"НАСТРОЙКИ",
+    "options_settings_menu_fullscreen0":"Включить полноэкранный режим",
+    "options_settings_menu_fullscreen1":"Включить оконный режим",
+    "options_settings_menu_resolution":"Разрешение в оконном режиме: ",
 
     "event_loza":"Лоза.<timer=25> По ней,<timer=15> вроде,<timer=15> никуда не получится взобраться.",
+
+    "party_name_carol":"Кэрол",
 
     "options_back":"Назад"
     

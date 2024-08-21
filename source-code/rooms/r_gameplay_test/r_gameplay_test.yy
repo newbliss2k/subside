@@ -27,6 +27,7 @@
     {"name":"inst_3BE17A5C","path":"rooms/r_gameplay_test/r_gameplay_test.yy",},
     {"name":"inst_61A30645","path":"rooms/r_gameplay_test/r_gameplay_test.yy",},
     {"name":"inst_17BD0B48","path":"rooms/r_gameplay_test/r_gameplay_test.yy",},
+    {"name":"inst_188E63D4","path":"rooms/r_gameplay_test/r_gameplay_test.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -35,6 +36,7 @@
       ],"layers":[],"name":"gui","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":true,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"instances","depth":-1,"effectEnabled":true,"effectType":null,"gridX":20,"gridY":20,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v1","%Name":"inst_917A55","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_917A55","objectId":{"name":"o_chara","path":"objects/o_chara/o_chara.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":0.5,"scaleY":0.5,"x":240.0,"y":140.0,},
+        {"$GMRInstance":"v1","%Name":"inst_188E63D4","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_188E63D4","objectId":{"name":"o_encounter","path":"objects/o_encounter/o_encounter.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":5.6153846,"scaleY":2.5384614,"x":91.0,"y":154.0,},
       ],"layers":[],"name":"instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":true,"visible":true,},
     {"$GMRInstanceLayer":"","%Name":"hitbox","depth":0,"effectEnabled":false,"effectType":"none","gridX":20,"gridY":20,"hierarchyFrozen":false,"inheritLayerDepth":false,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"instances":[
         {"$GMRInstance":"v1","%Name":"inst_28A4068","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_28A4068","objectId":{"name":"o_solid","path":"objects/o_solid/o_solid.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":24.0,"x":-20.0,"y":0.0,},

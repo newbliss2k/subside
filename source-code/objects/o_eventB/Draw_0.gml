@@ -1,3 +1,5 @@
+event_inherited()
+
 if player_event() {
 	
 	switch flag {

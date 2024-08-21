@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"device_mouse_check_any",
   "parent":{
-    "name":"Shitty Scripts",
-    "path":"folders/Scripts/Shitty Scripts.yy",
+    "name":"Simple Scripts",
+    "path":"folders/Scripts/Simple Scripts.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

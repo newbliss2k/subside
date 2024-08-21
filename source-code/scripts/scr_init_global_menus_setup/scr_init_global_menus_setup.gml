@@ -1,4 +1,4 @@
-function scr_global_menus_setup() {
+function scr_init_global_menus_setup() {
 
 global.menus={}
 with global.menus {
@@ -154,6 +154,36 @@ with global.menus {
 				color:	color,
 				func_step:	function(){
 					title = localize("lang_name")
+				},
+			},
+			
+			/* 002 */ {
+				title:	"",
+				func:	function(){
+					
+					window_set_fullscreen(!window_get_fullscreen())
+					window_set_size(global.options.resolutions[global.options.resolution][1],global.options.resolutions[global.options.resolution][2])
+					window_center()
+					
+				},
+				color:	color,
+				func_step:	function(){
+					title = localize("options_settings_menu_fullscreen"+string(window_get_fullscreen()))
+				},
+			},
+			
+			/* 003 */ {
+				title:	"",
+				func:	function(){
+					
+					if (global.options.resolution+1)>=array_length(global.options.resolutions) global.options.resolution=0 else global.options.resolution++
+					window_set_size(global.options.resolutions[global.options.resolution][1],global.options.resolutions[global.options.resolution][2])
+					window_center()
+					
+				},
+				color:	color,
+				func_step:	function(){
+					title = localize("options_settings_menu_resolution")+" "+string(global.options.resolutions[global.options.resolution][0])
 				},
 			},
 		]

@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"draw_text_outline",
+  "%Name":"scr_init_battles",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"draw_text_outline",
+  "name":"scr_init_battles",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",
