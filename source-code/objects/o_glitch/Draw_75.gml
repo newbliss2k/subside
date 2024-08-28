@@ -1,1 +1,1 @@
-bktglitch_deactivate();
+bktglitch_deactivate()

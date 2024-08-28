@@ -18,7 +18,12 @@
     "options_settings_menu_caption":"НАСТРОЙКИ",
     "options_settings_menu_fullscreen0":"Включить полноэкранный режим",
     "options_settings_menu_fullscreen1":"Включить оконный режим",
-    "options_settings_menu_resolution":"Разрешение в оконном режиме: ",
+    "options_settings_menu_resolution":"Размер окна: ",
+
+    "battle_option_attack":"Атака",
+    "battle_option_item":"Вещи",
+    "battle_option_skill":"Навыки",
+    "battle_option_run":"Побег",
 
     "event_loza":"Лоза.<timer=25> По ней,<timer=15> вроде,<timer=15> никуда не получится взобраться.",
 

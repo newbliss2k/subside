@@ -14,7 +14,7 @@ function _menu_setup1(){
 	
 	type="list"
 	
-	caption=function(){return localize("options_pause_menu_caption")}
+	caption=localize("options_pause_menu_caption")
 	caption_color=c_white
 		
 	color=c_white

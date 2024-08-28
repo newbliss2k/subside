@@ -136,7 +136,7 @@ function poll_handle(_only_ir=0) {
 		}
 	
 	
-		if getkey("poll_up",pressed) {
+		if getkey("up",pressed) {
 		
 			poll_selector--
 			if poll_selector<0 poll_selector=array_length(_poll_f)-1
@@ -145,7 +145,7 @@ function poll_handle(_only_ir=0) {
 		
 		}
 	
-		if getkey("poll_down",pressed) {
+		if getkey("down",pressed) {
 		
 			poll_selector++
 			if poll_selector>=array_length(_poll_f) poll_selector=0

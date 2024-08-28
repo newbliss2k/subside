@@ -31,7 +31,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"s_battle_carol",
+    "path":"sprites/s_battle_carol/s_battle_carol.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

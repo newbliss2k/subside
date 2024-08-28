@@ -18,7 +18,12 @@
     "options_settings_menu_caption":"SETTINGS",
     "options_settings_menu_fullscreen0":"Switch to fullscreen",
     "options_settings_menu_fullscreen1":"Switch to window mode",
-    "options_settings_menu_resolution":"Текущее разрешение: ",
+    "options_settings_menu_resolution":"Window size: ",
+
+    "battle_option_attack":"Attack",
+    "battle_option_item":"Item",
+    "battle_option_skill":"Skill",
+    "battle_option_run":"Runaway",
 
     "event_loza":"Vine.<timer=25> It seems like you can't climb anywhere along it.",
 

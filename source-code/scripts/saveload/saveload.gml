@@ -48,7 +48,7 @@ function scr_file_save_options(){
 	
 	var _file = file_text_open_write("options.ss")
 		
-		/* 001 */	file_text_write_real(_file,vk_up)
+		/* 001 */	file_text_write_real(_file,global.key1.up)
 					file_text_writeln(_file)
 		/* 002 */	file_text_write_real(_file,global.key2.up)
 					file_text_writeln(_file)

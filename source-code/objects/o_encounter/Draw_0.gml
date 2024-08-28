@@ -3,7 +3,7 @@ event_inherited();
 
 if player_encounter() {
 	
-	room_goto(r_battle)
+	battle_encounter(global.battle.group.knifeman)
 	
 }
 

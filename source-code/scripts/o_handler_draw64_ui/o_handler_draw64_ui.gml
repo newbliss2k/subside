@@ -18,11 +18,11 @@ function o_handler_draw64_ui() {
 	
 	if global.game.pause=1 {
 		
-		if getkey("poll_down",pressed) {
+		if getkey("down",pressed) {
 			if global.game.menu.selector=(array_length(global.game.menu.options)-1) global.game.menu.selector=0 
 			else global.game.menu.selector++
 		}
-		else if getkey("poll_up",pressed) {
+		else if getkey("up",pressed) {
 			if global.game.menu.selector=0 global.game.menu.selector=(array_length(global.game.menu.options)-1)
 			else global.game.menu.selector--
 		}

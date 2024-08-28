@@ -28,7 +28,7 @@ if player_event() {
 			/* 0 */ {text:"\"Да\"",func: function(_ir=0){
 				msg_func(function(){
 					var _rnd = 0
-					o_glitch.intensity = _rnd
+					o_glitch.intensity = o_glitch.intensity_default
 					o_eventB.flag=2
 				})
 			}},

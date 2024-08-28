@@ -1,5 +1,11 @@
 function player_event(_key="ok") {
 	
+	if variable_instance_exists(self,"image_index_keyboard") {
+		image_index_keyboard+=0.05
+		if image_index_keyboard>=2 image_index_keyboard=0
+	}
+	else image_index_keyboard=0
+	
 	var _key_pressed = getkey(_key,pressed)
 	
 	if (global.game.pause=0) and (global.game.mode="walk") and place_meeting(x,y,o_chara) and _key_pressed and (o_writer.active=0) {
@@ -10,7 +16,7 @@ function player_event(_key="ok") {
 	if (global.game.pause=0) and (global.game.mode="walk") and place_meeting(x,y,o_chara) and (o_writer.active=0) image_alpha=min(image_alpha+0.05,1)
 	else image_alpha=max(image_alpha-0.05,0)
 	
-	draw_sprite_ext(s_keyboard_a,-1,x,y,0.5,0.5,0,c_white,image_alpha)
+	draw_sprite_ext(s_keyboard_spacebar,image_index_keyboard,x,y,0.5,0.5,0,c_white,image_alpha)
 }
 
 function player_encounter(_move=0,_speed=0) {

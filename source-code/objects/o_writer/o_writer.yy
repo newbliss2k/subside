@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_keyboard_a",
-    "path":"sprites/s_keyboard_a/s_keyboard_a.yy",
+    "name":"s_keyboard_spacebar",
+    "path":"sprites/s_keyboard_spacebar/s_keyboard_spacebar.yy",
   },
   "spriteMaskId":null,
   "visible":true,

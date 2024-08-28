@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"scr_init_battles",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Battle",
+    "path":"folders/Objects/Battle.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

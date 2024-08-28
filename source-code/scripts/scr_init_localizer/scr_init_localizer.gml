@@ -18,6 +18,3 @@ function localize(_string) {
 	if struct_exists(global.localization[_lang], _string) return struct_get(global.localization[_lang], _string)
 	else return "Unlocalized string \""+_string+"\""
 }
-
-// To make string dynamic, use construction like
-// function(){return localize("options_pause_menu_caption")}

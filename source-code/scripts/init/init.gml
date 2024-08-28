@@ -21,8 +21,11 @@ with global.game {
 		{
 			name: "carol",
 			display_name: function(){return localize("party_name_carol")},
+			
+			face:s_party_carol,
+			
 			stat_lv: 1,
-			stat_hp: 15,
+			stat_hp: 20,
 			stat_hp_max: 20,
 			stat_mn: 10,
 			stat_mn_max: 10,

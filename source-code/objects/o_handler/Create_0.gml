@@ -20,8 +20,8 @@ instance_create_depth(0,0,depth,o_glitch)
 
 var _camera_width	=	427
 var _camera_height	=	240
-var _border_width	=	20
-var _border_height	=	20
+var _border_width	=	50
+var _border_height	=	30
 
 if instance_exists(o_chara) camera=camera_create_view(0,0,_camera_width,_camera_height,0,o_chara,-1,-1,(_camera_width-_border_width)/2,(_camera_height-_border_height)/2)
 else camera=camera_create_view(0,0,_camera_width,_camera_height,0,noone,-1,-1,(_camera_width-_border_width)/2,(_camera_height-_border_height)/2)

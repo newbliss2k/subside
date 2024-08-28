@@ -24,30 +24,24 @@ function scr_getkey_setup(){
 		
 		// primary keys definition
 		
-		global.key1.up		=	vk_up
-		global.key1.left	=	vk_left
-		global.key1.down	=	vk_down
-		global.key1.right	=	vk_right
+		global.key1.up		=	ord("W")
+		global.key1.left	=	ord("A")
+		global.key1.down	=	ord("S")
+		global.key1.right	=	ord("D")
 		
-		global.key1.poll_up		=	vk_up
-		global.key1.poll_down	=	vk_down
-		
-		global.key1.ok		=	ord("A")
-		global.key1.cancel	=	ord("S")
-		global.key1.menu	=	ord("D")
+		global.key1.ok		=	vk_space
+		global.key1.cancel	=	ord("Q")
+		global.key1.menu	=	ord("E")
 		
 		global.key1.res		=	ord("R")
 		global.key1.esc		=	vk_escape
 		
 		// secondary keys definition
 		
-		global.key2.up		=	unset
-		global.key2.left	=	unset
-		global.key2.down	=	unset
-		global.key2.right	=	unset
-		
-		global.key2.poll_up		=	ord("W")
-		global.key2.poll_down	=	ord("S")
+		global.key2.up		=	vk_up
+		global.key2.left	=	vk_left
+		global.key2.down	=	vk_down
+		global.key2.right	=	vk_right
 		
 		global.key2.ok		=	unset
 		global.key2.cancel	=	unset

@@ -9,9 +9,9 @@ if global.game.pause=0 and global.game.mode="walk" {
 	
 	scr_check_priorities()
 	
-	if getkey("ok") {
-		x_speed=3
-		y_speed=3
+	if getkey("cancel") {
+		x_speed=4
+		y_speed=4
 	}
 	else {
 		x_speed=2
