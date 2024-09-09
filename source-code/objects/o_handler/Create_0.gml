@@ -6,7 +6,7 @@ if room=r_init {
 
 if room=r_gameplay_test {
 	
-	instance_create_depth(0,0,-14000,o_writer)
+	
 	global.game.menu=global.menus.pause
 	
 	global.game.ost=audio_play_sound(ost_ruins,2,1,1,0,1.1)
@@ -17,6 +17,7 @@ global.osflavor=os_type
 global.aspectratio=display_get_width()/display_get_height()
 instance_create_depth(20,140,-15980,o_control)
 instance_create_depth(0,0,depth,o_glitch)
+instance_create_depth(0,0,depth+3,o_writer)
 
 var _camera_width	=	427
 var _camera_height	=	240

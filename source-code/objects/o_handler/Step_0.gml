@@ -5,9 +5,11 @@ if getkey("esc") {
 		game_end_timer++
 	}
 }
-else game_end_timer=max(0,game_end_timer-1)
+else game_end_timer=max(00,game_end_timer-1)
 
 if getkey("menu",pressed) if global.game.mode="walk" global.game.pause=!global.game.pause
+
+if keyboard_check_pressed(ord("L")) scr_del_options()
 
 /*
 view_xport[0]=irandom_range(-0.1,0)

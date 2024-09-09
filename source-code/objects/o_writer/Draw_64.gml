@@ -32,6 +32,7 @@ if global.game.pause=0 and array_length(global.msg)>current_msg {
 				// Мы просто интерпретируем и выводим все символы до последнего с помощью цикла while.
 				scr_writer_redline_check()
 				scr_writer_format() // Этой функцией мы интерпретируем текст.
+				scr_writer_format()
 				write() // Этой функцией мы осуществляем выведение символа.
 				
 			}
@@ -118,9 +119,10 @@ if active=1 dbox_y1=lerp(dbox_y1,dbox_y1_open,dbox_anim_speed) else dbox_y1=lerp
 
 draw_set_color(0)
 draw_set_alpha(1)
-draw_rectangle(dbox_x1,dbox_y1,dbox_x2,dbox_y2,0) // Этой строчкой мы рисуем текстбокс-прямоугольник.
+if !(room=r_battle) draw_rectangle(dbox_x1,dbox_y1,dbox_x2,dbox_y2,0) // Этой строчкой мы рисуем текстбокс-прямоугольник.
 draw_set_color(c_white)
 draw_set_alpha(key_draw_alpha)
-draw_sprite(sprite_index,image_index,800,dbox_y1+5)
+draw_sprite(sprite_index,image_index,key_draw_x,dbox_y1+5)
 //draw_circular_bar(800,dbox_y1,timer_line*0.3,timer_redline,c_red,15,key_draw_alpha,5)
-//draw_wheel_ext(800,dbox_y1,10,9,c_red,timer_line*0.3,timer_redline,10,90,true,key_draw_alpha)
+//draw_wheel_ext(key_draw_x,dbox_y1,10,9,c_red,timer_line*0.3,timer_redline,10,90,true,key_draw_alpha)
+//draw_wheel_ext(30,30,100,9,c_red,50,100,10,90,true,1)

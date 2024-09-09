@@ -27,16 +27,18 @@ if iv_cooldown>0 {
 	
 	iv_cooldown--
 	
-	if iv_alpha_cd>0 {
-		
-		iv_alpha_cd--
-		
-	}
+	if iv_alpha_cd>0 iv_alpha_cd--
 	else {
 		
 		iv_alpha_cd=iv_alpha_cd_period
-		if iv_alpha=0.1 iv_alpha=0.2
-		else iv_alpha=0.1
+		if iv_alpha=0.1 {
+			iv_alpha=0.2
+			o_battle_background.hue_s=0
+		}
+		else {
+			iv_alpha=0.1
+			o_battle_background.hue_s=240
+		}
 		
 	}
 	
@@ -44,6 +46,7 @@ if iv_cooldown>0 {
 else {
 	
 	iv_alpha=1
+	o_battle_background.hue_s=-1
 	iv_alpha_cd=0
 	
 	

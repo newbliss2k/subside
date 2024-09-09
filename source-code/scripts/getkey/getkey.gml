@@ -16,41 +16,37 @@ function scr_getkey_setup(){
 	#macro mouse_any -6
 	
 	#macro unset -7
-	
-	// key load from file
 		
-		global.key1={}
-		global.key2={}
+		global.options.key1={}
+		global.options.key2={}
 		
 		// primary keys definition
 		
-		global.key1.up		=	ord("W")
-		global.key1.left	=	ord("A")
-		global.key1.down	=	ord("S")
-		global.key1.right	=	ord("D")
+		global.options.key1.up		=	ord("W")
+		global.options.key1.left	=	ord("A")
+		global.options.key1.down	=	ord("S")
+		global.options.key1.right	=	ord("D")
 		
-		global.key1.ok		=	vk_space
-		global.key1.cancel	=	ord("Q")
-		global.key1.menu	=	ord("E")
+		global.options.key1.ok		=	vk_space
+		global.options.key1.cancel	=	ord("Q")
+		global.options.key1.menu	=	ord("E")
 		
-		global.key1.res		=	ord("R")
-		global.key1.esc		=	vk_escape
+		global.options.key1.res		=	ord("R")
+		global.options.key1.esc		=	vk_escape
 		
 		// secondary keys definition
 		
-		global.key2.up		=	vk_up
-		global.key2.left	=	vk_left
-		global.key2.down	=	vk_down
-		global.key2.right	=	vk_right
+		global.options.key2.up		=	vk_up
+		global.options.key2.left	=	vk_left
+		global.options.key2.down	=	vk_down
+		global.options.key2.right	=	vk_right
 		
-		global.key2.ok		=	unset
-		global.key2.cancel	=	unset
-		global.key2.menu	=	unset
+		global.options.key2.ok		=	unset
+		global.options.key2.cancel	=	unset
+		global.options.key2.menu	=	unset
 		
-		global.key2.res		=	unset
-		global.key2.esc		=	unset
-		
-	ini_close()
+		global.options.key2.res		=	unset
+		global.options.key2.esc		=	unset
 	
 }
 
@@ -84,8 +80,8 @@ function scr_getkey_add_direct(__key){
 
 function getkey(_key,_type=0){
 	
-	var _key1=variable_struct_get(global.key1,_key)
-	var _key2=variable_struct_get(global.key2,_key)
+	var _key1=variable_struct_get(global.options.key1,_key)
+	var _key2=variable_struct_get(global.options.key2,_key)
 	//show_debug_message(string(mb_left)+" "+string(mb_middle)+" "+string(mb_right)+" "+string(mb_any)+" "+string(mb_none))
 	//show_debug_message("1:"+string(_key1)+" 2:"+string(_key2)+" 0:"+string(_key))
 	

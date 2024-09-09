@@ -149,6 +149,7 @@ with global.menus {
 					var _lang = array_get_index(global.langs,global.game.lang)
 					if (_lang+1)>=array_length(global.langs) _lang=0 else _lang++
 					global.game.lang=global.langs[_lang]
+					scr_save_options()
 					
 				},
 				color:	color,
@@ -161,9 +162,11 @@ with global.menus {
 				title:	"",
 				func:	function(){
 					
-					window_set_fullscreen(!window_get_fullscreen())
+					global.options.fullscreen=!global.options.fullscreen
+					window_set_fullscreen(global.options.fullscreen)
 					window_set_size(global.options.resolutions[global.options.resolution][1],global.options.resolutions[global.options.resolution][2])
 					window_center()
+					scr_save_options()
 					
 				},
 				color:	color,
@@ -179,6 +182,7 @@ with global.menus {
 					if (global.options.resolution+1)>=array_length(global.options.resolutions) global.options.resolution=0 else global.options.resolution++
 					window_set_size(global.options.resolutions[global.options.resolution][1],global.options.resolutions[global.options.resolution][2])
 					window_center()
+					scr_save_options()
 					
 				},
 				color:	color,

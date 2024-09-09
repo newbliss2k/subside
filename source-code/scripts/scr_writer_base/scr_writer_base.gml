@@ -2,7 +2,7 @@ function write(_nosound=0) {
 	
 	active=1
 	global.game.mode="dialogue"
-	letter=instance_create_depth(x,y,-14001,o_letter)
+	letter=instance_create_depth(x,y,depth-1,o_letter)
 	
 	
 	
@@ -13,6 +13,8 @@ function write(_nosound=0) {
 			audio_play_sound(sfx_writer_npc,1,0,0.25)
 			o_writer.timer_snd=6
 		}
+		num=o_writer.current_char
+		
 		xscale=o_writer.xscale
 		yscale=o_writer.yscale
 		yscale2=1
@@ -23,7 +25,10 @@ function write(_nosound=0) {
 		c4=o_writer.c4
 		alpha=o_writer.alpha
 		alpha2=0
-			
+		
+		wave=o_writer.wave
+		wave_step=o_writer.wave_step
+		
 		font=o_writer.font
 		destroy=0
 		create=1

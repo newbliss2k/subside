@@ -1,4 +1,13 @@
+if wave_n=-1 wave_n=num
+
 if global.game.pause=0 {
+	
+	if !((wave=0) or (destroy_ir=1)) {
+		
+		wave_y=dsin(wave_n*13)*wave
+		wave_n+=wave_step
+		
+	}
 	
 	draw_set_font(font)
 	if destroy=1 {
@@ -36,4 +45,4 @@ if global.game.pause=0 {
 		y_border=lerp(y_border,0,0.1)
 	}
 }
-draw_text_transformed_color(x+x_border,y+y_border+o_writer.dbox_y1,str,xscale,yscale*yscale2,angle,c1,c2,c3,c4,alpha*alpha2)
+draw_text_transformed_color(x+x_border,y+y_border+o_writer.dbox_y1+wave_y,str,xscale,yscale*yscale2,angle,c1,c2,c3,c4,alpha*alpha2)

@@ -1,6 +1,6 @@
 // POSITION CONSTANTS
 		
-		dbox_x1=0
+		if room=r_battle dbox_x1=160 else dbox_x1=0
 		dbox_x2=427*2
 		dbox_y1=241*2 // variable
 		dbox_y2=242*2
@@ -10,7 +10,7 @@
 		
 		dbox_anim_speed=0.1
 		
-		text_x=10
+		text_x=10+dbox_x1
 		new_line_offset=24
 		
 		
@@ -22,7 +22,7 @@
 		
 		poll_selector=0
 		
-		poll_x=15
+		if room=r_battle poll_x=160 else poll_x=15
 		poll_y=390
 		
 		poll_selector_alpha=0
@@ -38,9 +38,10 @@
 		
 		poll_duration_border=5
 		
-		max_line_width=840
+		if room=r_battle max_line_width=695 else max_line_width=840
 		
 		key_draw_alpha=0
+		if room=r_battle key_draw_x=800-160 else key_draw_x=800
 		
 function current_char_str(_offset=0) {
 	return string_char_at(global.msg[current_msg].text,current_char+_offset)
@@ -62,6 +63,7 @@ function get_keyword(_end_char=">") {
 
 function get_keyword_soft(_end_char=">") {
 	var _key=""
+	if !(current_char_str(1)=_end_char)
 	while !(current_char_str(1)=_end_char) {
 		current_char++
 		_key+=current_char_str()
@@ -104,6 +106,9 @@ function reset(_soft=0) {
 	c3=c_white
 	c4=c_white
 	alpha=1
+	
+	wave=0
+	wave_step=0
 	
 	x=text_x
 	y=0

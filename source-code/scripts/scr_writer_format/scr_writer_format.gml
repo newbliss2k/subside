@@ -12,19 +12,21 @@ function scr_writer_redline_check() {
 
 function scr_writer_format(_safe=0){
 	
-
-	
-	if (current_char_str()=" ") and (_safe=0) {
+	if _safe=0 if current_char_str()=" " {
 		
 		var _offset = 1
 		var _test_string = ""
 		while !(current_char_str(_offset)=" " or current_char_str(_offset)="") {
 			
+			if current_char_str(_offset)="/" or current_char_str(_offset)="<"
 			while current_char_str(_offset)="/" or current_char_str(_offset)="<" switch current_char_str(_offset) {
 				case "/":	_offset+=2
 							break
 				
-				case "<":	while !(current_char_str(_offset)=">") _offset++
+				case "<":	if !(current_char_str(_offset)=">")
+							while !(current_char_str(_offset)=">") _offset++
+							_offset++
+							break
 			}
 			
 			if !(current_char_str(_offset)=" " or current_char_str(_offset)="") {
@@ -34,15 +36,17 @@ function scr_writer_format(_safe=0){
 			
 		}
 		
+		draw_set_font(font)
 		if (x+string_width(_test_string))>max_line_width {
-			//log_push(_test_string)
-			//log_push(string(string_width(_test_string)))
 			x=text_x
 			y+=new_line_offset
 			current_char++
 		}
+		else {
+		}
 		
 	}
+	
 	if current_char_str()="/" or current_char_str()="<"
 	while current_char_str()="/" or current_char_str()="<" switch current_char_str() {
 		case "/": switch current_char_str(1){
@@ -71,32 +75,46 @@ function scr_writer_format(_safe=0){
 									c4=c_white;
 								}
 								break;
+								
+				case "wave/":	if _safe=0 {
+									wave=0
+									wave_step=0
+								}
+								break;
 					
 			} else switch (string_split(_keyword,"=")[0]) {
 					
 				case "timer":	if _safe=0 {
-									timer=real(string_split(_keyword,"=")[1]);
+									timer=real(string_split(_keyword,"=")[1])
 									
 								}
-								else timer_redline+=0.5*real(string_split(_keyword,"=")[1]);
+								else timer_redline+=0.5*real(string_split(_keyword,"=")[1])
 									
-								break;
+								break
 					
 				case "c4":		if _safe=0 {
-									c1=real(string_split(_keyword,"=")[1]);
-									c2=real(string_split(_keyword,"=")[2]);
-									c3=real(string_split(_keyword,"=")[3]);
-									c4=real(string_split(_keyword,"=")[4]);
+									c1=real(string_split(_keyword,"=")[1])
+									c2=real(string_split(_keyword,"=")[2])
+									c3=real(string_split(_keyword,"=")[3])
+									c4=real(string_split(_keyword,"=")[4])
 								}
-								break;
+								break
 									
 				case "color":	if _safe=0 {
-									c1=real(string_split(_keyword,"=")[1]);
-									c2=real(string_split(_keyword,"=")[1]);
-									c3=real(string_split(_keyword,"=")[1]);
-									c4=real(string_split(_keyword,"=")[1]); break;
+									c1=real(string_split(_keyword,"=")[1])
+									c2=real(string_split(_keyword,"=")[1])
+									c3=real(string_split(_keyword,"=")[1])
+									c4=real(string_split(_keyword,"=")[1])
 								}
-				case "tag2":	break;
+								break
+								
+				case "wave":	if _safe=0 {
+									wave=real(string_split(_keyword,"=")[1])
+									wave_step=real(string_split(_keyword,"=")[2])
+									
+								}
+								break
+				case "tag2":	break
 					
 			} break;
 	}
