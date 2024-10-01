@@ -7,6 +7,7 @@ var _guiy = display_get_gui_height()
 	
 	selector_v2=[0,0]
 	
+	action=0 // Can be 0, "attack", "item", "action" or "skill"
 	choice_group="enemy" // Can be "enemy", "party", "item" or "skill"
 	choice_group_changable=0 // If true, allows switching choice_group between "enemy" and "party"
 	

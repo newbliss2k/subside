@@ -1,0 +1,82 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/24.7.8 Chrome/128.0.6613.36 Electron/32.0.1 Safari/537.36" version="24.7.8">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="1509" dy="2049" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="wuz_MT8v-WhvYMyv7se5-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="wuz_MT8v-WhvYMyv7se5-0" target="wuz_MT8v-WhvYMyv7se5-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wuz_MT8v-WhvYMyv7se5-0" value="Первая встреча Гамлета и Кэрола" style="shape=cube;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;darkOpacity=0.05;darkOpacity2=0.1;fillColor=#4D4D4D;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="360" y="-40" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="wuz_MT8v-WhvYMyv7se5-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="wuz_MT8v-WhvYMyv7se5-2" target="wuz_MT8v-WhvYMyv7se5-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wuz_MT8v-WhvYMyv7se5-2" value="Кэрол заходит в ветхий сарай. Там он обнаруживает Гамлета, над которым нависло угрожающее существо (назовем его, например, ЧТО-ТО). Гамлет лежит на полу, в углу, в испуге прижав оружие к груди. Как только он видит Кэрола за ЧЕМ-ТО, он кричит:" style="rounded=0;whiteSpace=wrap;html=1;shape=label;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="220" y="80" width="398.75" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="wuz_MT8v-WhvYMyv7se5-10" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="wuz_MT8v-WhvYMyv7se5-7" target="wuz_MT8v-WhvYMyv7se5-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wuz_MT8v-WhvYMyv7se5-7" value="&lt;span&gt;-&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;Кэрол... помоги!&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=50;fontStyle=2;fillColor=#660066;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="319.38" y="200" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wuz_MT8v-WhvYMyv7se5-12" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="wuz_MT8v-WhvYMyv7se5-9" target="wuz_MT8v-WhvYMyv7se5-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wuz_MT8v-WhvYMyv7se5-9" value="ЧТО-ТО съебывает, оставляя Гамлета и Кэрола одних.&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="295" y="270" width="250" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="wuz_MT8v-WhvYMyv7se5-15" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="wuz_MT8v-WhvYMyv7se5-11" target="wuz_MT8v-WhvYMyv7se5-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wuz_MT8v-WhvYMyv7se5-11" value="&lt;div&gt;- Кэрол, ты.. вовремя пришел...&lt;/div&gt;&lt;div&gt;- Если бы не ты, я не знаю, чтобы со мной сделала эта... чем бы это ни было.&lt;/div&gt;&lt;div&gt;- Кэрол, я так рад, что ты здесь! Я уже вдоволь наскучался по тебе.&lt;/div&gt;&lt;div&gt;- Ты, наверное, хочешь знать, что это за место...&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=15;fontStyle=2;align=left;verticalAlign=middle;spacingLeft=5;fillColor=#660066;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="230" y="360" width="380" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="wuz_MT8v-WhvYMyv7se5-18" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="wuz_MT8v-WhvYMyv7se5-14" target="wuz_MT8v-WhvYMyv7se5-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wuz_MT8v-WhvYMyv7se5-30" value="Где ты пропадал?&lt;div&gt;(перебивание)&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="wuz_MT8v-WhvYMyv7se5-18">
+          <mxGeometry x="-0.201" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wuz_MT8v-WhvYMyv7se5-14" value="" style="rhombus;whiteSpace=wrap;html=1;fillColor=#6a00ff;fontColor=#ffffff;strokeColor=#3700CC;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="403" y="530" width="34" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="wuz_MT8v-WhvYMyv7se5-33" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="wuz_MT8v-WhvYMyv7se5-17" target="wuz_MT8v-WhvYMyv7se5-32">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wuz_MT8v-WhvYMyv7se5-17" value="- Я.. просто.. это долгая история.." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#660066;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="160" y="600" width="200" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wuz_MT8v-WhvYMyv7se5-25" value="- Это Subside (конечно казвание рабочее и мы его сто пудов поменяем) - типа, виртуальный мир." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#660066;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="480" y="600" width="250" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="wuz_MT8v-WhvYMyv7se5-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="wuz_MT8v-WhvYMyv7se5-14" target="wuz_MT8v-WhvYMyv7se5-25">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wuz_MT8v-WhvYMyv7se5-31" value="Куда мы попали?" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="wuz_MT8v-WhvYMyv7se5-26">
+          <mxGeometry x="-0.3022" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wuz_MT8v-WhvYMyv7se5-37" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="wuz_MT8v-WhvYMyv7se5-32" target="wuz_MT8v-WhvYMyv7se5-36">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wuz_MT8v-WhvYMyv7se5-38" value="Тебя не было дома три года!" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="wuz_MT8v-WhvYMyv7se5-37">
+          <mxGeometry x="-0.2549" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wuz_MT8v-WhvYMyv7se5-32" value="" style="rhombus;whiteSpace=wrap;html=1;fillColor=#6a00ff;fontColor=#ffffff;strokeColor=#3700CC;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="243" y="670" width="34" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="wuz_MT8v-WhvYMyv7se5-36" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#660066;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="20" y="750" width="120" height="30" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

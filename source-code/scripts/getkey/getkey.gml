@@ -1,5 +1,3 @@
-
-
 function scr_getkey_setup(){
 	
 	// this is setup script. it must be called in start of the game
@@ -28,7 +26,7 @@ function scr_getkey_setup(){
 		global.options.key1.right	=	ord("D")
 		
 		global.options.key1.ok		=	vk_space
-		global.options.key1.cancel	=	ord("Q")
+		global.options.key1.back	=	ord("Q")
 		global.options.key1.menu	=	ord("E")
 		
 		global.options.key1.res		=	ord("R")
@@ -42,7 +40,7 @@ function scr_getkey_setup(){
 		global.options.key2.right	=	vk_right
 		
 		global.options.key2.ok		=	unset
-		global.options.key2.cancel	=	unset
+		global.options.key2.back	=	unset
 		global.options.key2.menu	=	unset
 		
 		global.options.key2.res		=	unset

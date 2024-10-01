@@ -42,13 +42,15 @@
     {"$GMFolder":"","%Name":"Tilesets","folderPath":"folders/Tilesets.yy","name":"Tilesets","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
   "IncludedFiles":[
+    {"$GMIncludedFile":"","%Name":"global.cdat","CopyToMask":-1,"filePath":"datafiles","name":"global.cdat","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"en.l","CopyToMask":-1,"filePath":"datafiles/localizations","name":"en.l","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
+    {"$GMIncludedFile":"","%Name":"jp.l","CopyToMask":-1,"filePath":"datafiles/localizations","name":"jp.l","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
     {"$GMIncludedFile":"","%Name":"ru.l","CopyToMask":-1,"filePath":"datafiles/localizations","name":"ru.l","resourceType":"GMIncludedFile","resourceVersion":"2.0",},
   ],
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.8.0.169",
+    "IDEVersion":"2024.8.1.171",
   },
   "name":"subside",
   "resources":[
@@ -83,6 +85,8 @@
     {"id":{"name":"r_init","path":"rooms/r_init/r_init.yy",},},
     {"id":{"name":"bktGlitch_inline","path":"scripts/bktGlitch_inline/bktGlitch_inline.yy",},},
     {"id":{"name":"bktGlitch","path":"scripts/bktGlitch/bktGlitch.yy",},},
+    {"id":{"name":"c_item","path":"scripts/c_item/c_item.yy",},},
+    {"id":{"name":"c_party","path":"scripts/c_party/c_party.yy",},},
     {"id":{"name":"device_mouse_check_any","path":"scripts/device_mouse_check_any/device_mouse_check_any.yy",},},
     {"id":{"name":"device_mouse_current_x_to_gui","path":"scripts/device_mouse_current_x_to_gui/device_mouse_current_x_to_gui.yy",},},
     {"id":{"name":"device_mouse_current_y_to_gui","path":"scripts/device_mouse_current_y_to_gui/device_mouse_current_y_to_gui.yy",},},
@@ -98,7 +102,6 @@
     {"id":{"name":"scr_event_functions","path":"scripts/scr_event_functions/scr_event_functions.yy",},},
     {"id":{"name":"scr_init_battles","path":"scripts/scr_init_battles/scr_init_battles.yy",},},
     {"id":{"name":"scr_init_global_menus_setup","path":"scripts/scr_init_global_menus_setup/scr_init_global_menus_setup.yy",},},
-    {"id":{"name":"scr_init_item","path":"scripts/scr_init_item/scr_init_item.yy",},},
     {"id":{"name":"scr_init_localizer","path":"scripts/scr_init_localizer/scr_init_localizer.yy",},},
     {"id":{"name":"scr_menu_functions","path":"scripts/scr_menu_functions/scr_menu_functions.yy",},},
     {"id":{"name":"scr_writer_base","path":"scripts/scr_writer_base/scr_writer_base.yy",},},

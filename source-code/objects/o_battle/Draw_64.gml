@@ -308,6 +308,8 @@ var _guiy = display_get_gui_height()
 		
 		if screen.name="choose_enemies" {
 			
+			draw_set_font(font_poll)
+			
 			draw_set_color(c_white)
 			
 			draw_set_alpha(0.1)
@@ -331,6 +333,97 @@ var _guiy = display_get_gui_height()
 				d_round,
 				1
 			)
+			
+			var _text_s = global.battle.enemies[_i].display_name()
+			var _text_w = string_width(_text_s)
+			var _text_h = string_height(_text_s)
+			
+			draw_set_alpha(0.3)
+			draw_set_color(0)
+			draw_roundrect_ext(
+				_x - _text_w/2 - d_enemy_select_border,
+				_y - _h - _text_h - d_enemy_select_border*5,
+				_x + _text_w/2 + d_enemy_select_border,
+				_y - _h - d_enemy_select_border*2,
+				d_round,
+				d_round,
+				0
+			)
+			
+			draw_set_alpha(1)
+			draw_set_color(c_white)
+			draw_roundrect_ext(
+				_x - _text_w/2 - d_enemy_select_border,
+				_y - _h - _text_h - d_enemy_select_border*5,
+				_x + _text_w/2 + d_enemy_select_border,
+				_y - _h - d_enemy_select_border*2,
+				d_round,
+				d_round,
+				1
+			)
+			
+			draw_text(_x - _text_w/2,_y - _h - _text_h - d_enemy_select_border*4.5,_text_s)
+			
+			#region Health Bar
+				
+				var _enemy_health = global.battle.enemies[_i].stat_hp/global.battle.enemies[_i].stat_hp_max
+				
+				#region Back
+					draw_set_alpha(1)
+					draw_set_color(0)
+					draw_roundrect_ext(
+						_x - _text_w/2,
+						_y - _h - d_enemy_select_border*2 - d_bar_border*2-d_bar_y-1,
+						_x + _text_w/2,
+						_y - _h - d_enemy_select_border*2 - d_bar_border-d_bar_y+1,
+						d_round*1.5,
+						d_round*1.5,
+						0
+					)
+				#endregion
+				#region Bar
+					draw_set_alpha(1)
+					draw_set_color(c_red)
+			
+					draw_roundrect_ext(
+						_x - _text_w/2,
+						_y - _h - d_enemy_select_border*2 - d_bar_border*2-d_bar_y-1,
+						_x + _text_w/2,
+						_y - _h - d_enemy_select_border*2 - d_bar_border-d_bar_y+1,
+						d_round*1.5,
+						d_round*1.5,
+						0
+					)
+				#endregion
+				#region Outline
+					draw_set_alpha(1)
+					draw_set_color(c_white)
+					draw_roundrect_ext(
+						_x - _text_w/2,
+						_y - _h - d_enemy_select_border*2 - d_bar_border*2-d_bar_y-1,
+						_x + _text_w/2,
+						_y - _h - d_enemy_select_border*2 - d_bar_border-d_bar_y+1,
+						d_round*1.5,
+						d_round*1.5,
+						2
+					)
+				#endregion
+		
+				#region Text
+			
+					draw_set_font(font_stats)
+					var _s_hp = string(global.battle.enemies[_i].stat_hp)+"/"+string(global.battle.enemies[_i].stat_hp_max)
+					var _w_s_hp = string_width(_s_hp)
+			
+					draw_set_alpha(1)
+					draw_set_color(0)
+					draw_text_outline(_x + _text_w/2-_w_s_hp,_y - _h - d_enemy_select_border*2 - d_bar_border*2-d_bar_y,_s_hp,0.5,0,c_white)
+					draw_set_color(c_white)
+					draw_text(_x + _text_w/2-_w_s_hp,_y - _h - d_enemy_select_border*2 - d_bar_border*2-d_bar_y,_s_hp)
+			
+				#endregion
+		
+			#endregion
 			
 		}
 	
@@ -362,6 +455,8 @@ var _guiy = display_get_gui_height()
 			10,
 			1
 		)
+		
+		
 	
 	}
 #endregion

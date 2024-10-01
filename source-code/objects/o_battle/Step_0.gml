@@ -51,11 +51,13 @@ else {
 							audio_play_sound(sfx_ui_select2,1,0,0.25)
 						break
 						
-						case "choose_enemies":
+						default:
+							
 							array_push(party_actions,{
-								action:"attack",
-								object:turn_player_party,
-								subject:selector
+								action:action,
+								actor:turn_player_party,
+								subject:selector,
+								object:0
 							})
 							selector=0
 							audio_play_sound(sfx_ui_select2,1,0,0.25)
@@ -63,8 +65,22 @@ else {
 						break
 					}
 					
-					if getkey("back",pressed) switch screem.name {
-						case "":
+					if getkey("back",pressed) switch screen.name {
+						case "start":
+							if turn_player_party>0 and turn_player_party<4
+								array_delete(party_actions,turn_player_party,1)
+								turn_player_party--
+								selector=0
+							break
+						
+						case "choose_enemies":
+							switch action {
+								case "attack":
+									action=0
+									screen=screen_start
+									break
+								
+							}
 							break
 						
 					}
@@ -72,72 +88,6 @@ else {
 			#endregion
 	
 		}
-	#endregion
-	
-	#region Player's Actions
-		
-		if turn_player_party>=array_length(global.game.party) {
-			
-			var _stat_sp_max = 0
-			var _stat_sp_max_party = 0
-			for(var _i=0;_i<array_length(party_actions);_i++) if (global.game.party[_i].stat_sp>_stat_sp_max) or ((global.game.party[_i].stat_sp=_stat_sp_max) and stat_sp_random) {
-				_stat_sp_max = global.game.party[_i].stat_sp
-				_stat_sp_max_party = _i
-			}
-			
-			if array_length(party_actions)<1 {
-				next_turn()
-			}
-			else {
-				var _a = party_actions[_stat_sp_max_party]
-				switch _a.action {
-				
-					case "attack":
-						//var _damage_range = irandom_range(0,1)
-						var _damage_multi
-						var _damage_type = irandom_range(0,20)
-						if _damage_type = 0 {
-							_damage_type = "fail"
-							_damage_multi = 0
-						}
-						else if _damage_type < 6 {
-							_damage_type = "weak"
-							_damage_multi = 0.6
-						}
-						else if _damage_type < 17 {
-							_damage_type = "default"
-							_damage_multi = 1
-						}
-						else {
-							_damage_type = "crit"
-							_damage_multi = 1.5
-						}
-					
-						var _damage = global.game.party[_a.object].stat_atk
-					
-						_damage = round(_damage*_damage_multi)
-						
-						global.battle.enemies[_a.subject].stat_hp-=_damage
-					
-						var _msg1 = localize("battle_attack_message_"+global.game.party[_a.object].eq_weapon)
-						_msg1 =	string_replace(_msg1,"%CHAR%",global.game.party[_a.object].display_name())
-						_msg1 =	string_replace(_msg1,"%ENEMY%",global.battle.enemies[_a.subject].display_name())
-						_msg1 =	string_replace(_msg1,"%DAMAGE%",_damage)
-					
-						var _msg2 = localize("battle_attack_"+_damage_type)
-						_msg2 =	string_replace(_msg2,"%CHAR%",global.game.party[_a.object].display_name())
-						_msg2 =	string_replace(_msg2,"%ENEMY%",global.battle.enemies[_a.subject].display_name())
-						_msg2 =	string_replace(_msg2,"%DAMAGE%",_damage)
-					
-						msg_text(_msg1+"<timer=30>/n"+_msg2,0)
-						break
-				
-				}
-				array_delete(party_actions,_stat_sp_max_party,1)
-			}
-			
-		}
-		
 	#endregion
 	
 	#region Enemy's turn
@@ -181,3 +131,72 @@ else {
 	#endregion
 	
 }
+
+#region Player's Actions
+
+	if turn_player_party>=array_length(global.game.party) {
+		if array_length(party_actions)>0 while array_length(party_actions)>0 {
+			var _stat_sp_max = 0
+			var _stat_sp_max_party = 0
+			var _stat_sp_random = random(1)
+			for(var _i=0;_i<array_length(party_actions);_i++) if (global.game.party[_i].stat_sp>_stat_sp_max) or ((_stat_sp_max==global.game.party[_i].stat_sp) and _stat_sp_random) {
+				_stat_sp_max = global.game.party[_i].stat_sp
+				_stat_sp_max_party = _i
+			}
+			
+			var _a = party_actions[_stat_sp_max_party]
+			switch _a.action {
+				
+			case "attack":
+				//var _damage_range = irandom_range(0,1)
+				var _damage_multi = 1
+				var _damage_type = irandom_range(0,20)
+				if _damage_type = 0 {
+					_damage_type = "fail"
+					_damage_multi = 0
+				}
+				else if _damage_type < 6 {
+					_damage_type = "weak"
+					_damage_multi = 0.6
+				}
+				else if _damage_type < 17 {
+					_damage_type = "default"
+					_damage_multi = 1
+				}
+				else {
+					_damage_type = "crit"
+					_damage_multi = 1.5
+				}
+					
+				var _damage = global.game.party[_a.actor].stat_atk
+					
+				_damage = round(_damage*_damage_multi)
+						
+				global.battle.enemies[_a.subject].stat_hp-=_damage
+					
+				var _msg1 = localize("battle_attack_message_"+global.game.party[_a.actor].eq_weapon)
+				_msg1 =	string_replace(_msg1,"%CHAR%",global.game.party[_a.actor].display_name())
+				_msg1 =	string_replace(_msg1,"%ENEMY%",global.battle.enemies[_a.subject].display_name())
+				_msg1 =	string_replace(_msg1,"%DAMAGE%",_damage)
+					
+				var _msg2 = localize("battle_attack_"+_damage_type)
+				_msg2 =	string_replace(_msg2,"%CHAR%",global.game.party[_a.actor].display_name())
+				_msg2 =	string_replace(_msg2,"%ENEMY%",global.battle.enemies[_a.subject].display_name())
+				_msg2 =	string_replace(_msg2,"%DAMAGE%",_damage)
+					
+				msg_text(_msg1)
+						
+				msg_text(_msg2)
+				break
+				
+			}
+			array_delete(party_actions,_stat_sp_max_party,1)
+			
+		}
+		else {
+			next_turn()
+		}
+	}
+
+		
+#endregion

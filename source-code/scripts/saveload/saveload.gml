@@ -1,3 +1,11 @@
+function json_load(_lang_file) {
+	
+	var _lang = ""
+	while (!file_text_eof(_lang_file)) _lang += file_text_readln(_lang_file)
+	return json_parse(_lang)
+	
+}
+
 function scr_save_options(){
 	var _filename = game_save_id+"options.dat"
 	var _file = file_text_open_write(_filename)

@@ -86,6 +86,7 @@ function next_turn() {
 			msg_func(function(){
 				turn_player_party=0
 				turn_player=0
+				party_actions=[]
 			})
 		}
 	}

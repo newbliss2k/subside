@@ -9,7 +9,7 @@ if global.game.pause=0 and global.game.mode="walk" {
 	
 	scr_check_priorities()
 	
-	if getkey("cancel") {
+	if getkey("back") {
 		x_speed=4
 		y_speed=4
 	}

@@ -1,24 +1,18 @@
-// INIT SCRIPT
-
-
-
-global.game={}
-global.c=json_load(working_directory+"global.const")
-with global.game {
+function c_party(){
 	
-	pause=0
-	menu=0
-	mode="walk"
-	lang="ru"
-}
-
-scr_init_localizer()
-c_item()
-scr_init_global_menus_setup()
-scr_init_battles()
-scr_init_console()
-
-global.game.party=[
+	global.c.classes = {}
+	with global.c.classes {
+		
+		soldier = {}
+		with soldier {
+			
+			name = "soldier"
+			display_name = 
+		}
+		
+	}
+	
+	global.c.party = [
 		
 		{
 			name: "carol",
@@ -27,8 +21,10 @@ global.game.party=[
 			face:s_party_carol,
 			
 			stat_lv: 1,
+			
 			stat_hp: 20,
 			stat_hp_max: 20,
+			
 			stat_mn: 10,
 			stat_mn_max: 10,
 			
@@ -97,29 +93,5 @@ global.game.party=[
 		},
 		
 	]
-
-global.options={}
-with global.options {
-	
-	switch_1=0
-	
-	resolution=0
-	resolutions=[
-		/*0*/["2x",1708,960],
-		/*1*/["1.5x",1281,720],
-		/*2*/["1x",854,480],
-		/*3*/["0.5x",427,240],
-	]
-	
-	fullscreen=1
 	
 }
-
-scr_getkey_setup()
-
-scr_load_options()
-
-// MSG SETUP
-
-global.msg=[]
-

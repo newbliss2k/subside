@@ -1,0 +1,20 @@
+{
+    "item": {
+        "patch": {
+            "name": "patch",
+            "display_name": "%!item_patch_name%",
+            
+            "action": "heal",
+            "target": "friend",
+            
+            "amount": 10,
+            "amount_percent": 0
+        },
+        "aburger": {
+            "action": "heal",
+            "amount": 80,
+            "amount_percent": 0,
+            "display_name": ""
+        }
+    }
+}

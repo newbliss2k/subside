@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"scr_init_item",
+  "%Name":"c_party",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"scr_init_item",
+  "name":"c_party",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Constants",
+    "path":"folders/Scripts/Constants.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",
